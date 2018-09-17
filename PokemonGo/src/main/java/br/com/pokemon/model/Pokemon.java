@@ -1,7 +1,6 @@
 package br.com.pokemon.model;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,26 +22,28 @@ public class Pokemon implements Serializable{
 	private String imgName;
 	private int generation;
 	private String evolutionStage;
-	private boolean evolved;
+	private int evolved;
 	private int familyId;
-	private boolean crossGen;
-	private List<Type> type;
-	private List<Weather> weather;
+	private int crossGen;
+	private String type1;
+	private String type2;
+	private String weather1;
+	private String weather2;
 	private int statTotal;
 	private int atk;
 	private int def;
 	private int sta;
 	private int legendary;
 	private int aquireable;
-	private boolean spaws;
-	private boolean regional;
+	private int spawns;
+	private int regional;
 	private int raidable;
 	private int hatchable;
-	private boolean shinny;
-	private boolean nest;
-	private boolean isNew;
-	private boolean notGettable;
-	private boolean futureEvolve;
+	private int shiny;
+	private int nest;
+	private int isNew;
+	private int notGettable;
+	private int futureEvolve;
 	private int cp40;
 	private int cp39;
 	
@@ -82,10 +83,10 @@ public class Pokemon implements Serializable{
 	public void setEvolutionStage(String evolutionStage) {
 		this.evolutionStage = evolutionStage;
 	}
-	public boolean isEvolved() {
+	public int getEvolved() {
 		return evolved;
 	}
-	public void setEvolved(boolean evolved) {
+	public void setEvolved(int evolved) {
 		this.evolved = evolved;
 	}
 	public int getFamilyId() {
@@ -94,23 +95,35 @@ public class Pokemon implements Serializable{
 	public void setFamilyId(int familyId) {
 		this.familyId = familyId;
 	}
-	public boolean isCrossGen() {
+	public int getCrossGen() {
 		return crossGen;
 	}
-	public void setCrossGen(boolean crossGen) {
+	public void setCrossGen(int crossGen) {
 		this.crossGen = crossGen;
 	}
-	public List<Type> getType() {
-		return type;
+	public String getType1() {
+		return type1;
 	}
-	public void setType(List<Type> type) {
-		this.type = type;
+	public void setType1(String type1) {
+		this.type1 = type1;
 	}
-	public List<Weather> getWeather() {
-		return weather;
+	public String getType2() {
+		return type2;
 	}
-	public void setWeather(List<Weather> weather) {
-		this.weather = weather;
+	public void setType2(String type2) {
+		this.type2 = type2;
+	}
+	public String getWeather1() {
+		return weather1;
+	}
+	public void setWeather1(String weather1) {
+		this.weather1 = weather1;
+	}
+	public String getWeather2() {
+		return weather2;
+	}
+	public void setWeather2(String weather2) {
+		this.weather2 = weather2;
 	}
 	public int getStatTotal() {
 		return statTotal;
@@ -148,16 +161,16 @@ public class Pokemon implements Serializable{
 	public void setAquireable(int aquireable) {
 		this.aquireable = aquireable;
 	}
-	public boolean isSpaws() {
-		return spaws;
+	public int getSpawns() {
+		return spawns;
 	}
-	public void setSpaws(boolean spaws) {
-		this.spaws = spaws;
+	public void setSpawns(int spaws) {
+		this.spawns = spaws;
 	}
-	public boolean isRegional() {
+	public int getRegional() {
 		return regional;
 	}
-	public void setRegional(boolean regional) {
+	public void setRegional(int regional) {
 		this.regional = regional;
 	}
 	public int getRaidable() {
@@ -172,34 +185,34 @@ public class Pokemon implements Serializable{
 	public void setHatchable(int hatchable) {
 		this.hatchable = hatchable;
 	}
-	public boolean isShinny() {
-		return shinny;
+	public int getShiny() {
+		return shiny;
 	}
-	public void setShinny(boolean shinny) {
-		this.shinny = shinny;
+	public void setShiny(int shinny) {
+		this.shiny = shinny;
 	}
-	public boolean isNest() {
+	public int getNest() {
 		return nest;
 	}
-	public void setNest(boolean nest) {
+	public void setNest(int nest) {
 		this.nest = nest;
 	}
-	public boolean isNew() {
+	public int getIsNew() {
 		return isNew;
 	}
-	public void setNew(boolean isNew) {
+	public void setIsNew(int isNew) {
 		this.isNew = isNew;
 	}
-	public boolean isNotGettable() {
+	public int getNotGettable() {
 		return notGettable;
 	}
-	public void setNotGettable(boolean notGettable) {
+	public void setNotGettable(int notGettable) {
 		this.notGettable = notGettable;
 	}
-	public boolean isFutureEvolve() {
+	public int getFutureEvolve() {
 		return futureEvolve;
 	}
-	public void setFutureEvolve(boolean futureEvolve) {
+	public void setFutureEvolve(int futureEvolve) {
 		this.futureEvolve = futureEvolve;
 	}
 	public int getCp40() {
@@ -222,30 +235,32 @@ public class Pokemon implements Serializable{
 		result = prime * result + atk;
 		result = prime * result + cp39;
 		result = prime * result + cp40;
-		result = prime * result + (crossGen ? 1231 : 1237);
+		result = prime * result + crossGen;
 		result = prime * result + def;
 		result = prime * result + ((evolutionStage == null) ? 0 : evolutionStage.hashCode());
-		result = prime * result + (evolved ? 1231 : 1237);
+		result = prime * result + evolved;
 		result = prime * result + familyId;
-		result = prime * result + (futureEvolve ? 1231 : 1237);
+		result = prime * result + futureEvolve;
 		result = prime * result + generation;
 		result = prime * result + hatchable;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((imgName == null) ? 0 : imgName.hashCode());
-		result = prime * result + (isNew ? 1231 : 1237);
+		result = prime * result + isNew;
 		result = prime * result + legendary;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + (nest ? 1231 : 1237);
-		result = prime * result + (notGettable ? 1231 : 1237);
+		result = prime * result + nest;
+		result = prime * result + notGettable;
 		result = prime * result + pokedexNumber;
 		result = prime * result + raidable;
-		result = prime * result + (regional ? 1231 : 1237);
-		result = prime * result + (shinny ? 1231 : 1237);
-		result = prime * result + (spaws ? 1231 : 1237);
+		result = prime * result + regional;
+		result = prime * result + shiny;
+		result = prime * result + spawns;
 		result = prime * result + sta;
 		result = prime * result + statTotal;
-		result = prime * result + ((type == null) ? 0 : type.hashCode());
-		result = prime * result + ((weather == null) ? 0 : weather.hashCode());
+		result = prime * result + ((type1 == null) ? 0 : type1.hashCode());
+		result = prime * result + ((type2 == null) ? 0 : type2.hashCode());
+		result = prime * result + ((weather1 == null) ? 0 : weather1.hashCode());
+		result = prime * result + ((weather2 == null) ? 0 : weather2.hashCode());
 		return result;
 	}
 	@Override
@@ -313,25 +328,34 @@ public class Pokemon implements Serializable{
 			return false;
 		if (regional != other.regional)
 			return false;
-		if (shinny != other.shinny)
+		if (shiny != other.shiny)
 			return false;
-		if (spaws != other.spaws)
+		if (spawns != other.spawns)
 			return false;
 		if (sta != other.sta)
 			return false;
 		if (statTotal != other.statTotal)
 			return false;
-		if (type == null) {
-			if (other.type != null)
+		if (type1 == null) {
+			if (other.type1 != null)
 				return false;
-		} else if (!type.equals(other.type))
+		} else if (!type1.equals(other.type1))
 			return false;
-		if (weather == null) {
-			if (other.weather != null)
+		if (type2 == null) {
+			if (other.type2 != null)
 				return false;
-		} else if (!weather.equals(other.weather))
+		} else if (!type2.equals(other.type2))
+			return false;
+		if (weather1 == null) {
+			if (other.weather1 != null)
+				return false;
+		} else if (!weather1.equals(other.weather1))
+			return false;
+		if (weather2 == null) {
+			if (other.weather2 != null)
+				return false;
+		} else if (!weather2.equals(other.weather2))
 			return false;
 		return true;
 	}
-	
 }
