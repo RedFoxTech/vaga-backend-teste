@@ -10,10 +10,10 @@ import javax.persistence.Table;
 public class Tipe {
 	
 	@Id
-	@Column(name = "ID_TIPE")
+	@Column(name = "ID")
 	private Long id;
 	
-	@Column(name = "DESC_TIPE")
+	@Column(name = "DESCRICAO")
 	private String descricao;
 
 	public Long getId() {

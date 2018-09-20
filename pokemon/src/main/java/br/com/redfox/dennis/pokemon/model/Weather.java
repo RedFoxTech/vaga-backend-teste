@@ -10,10 +10,10 @@ import javax.persistence.Table;
 public class Weather {
 	
 	@Id
-	@Column(name = "ID_WEATHER")
+	@Column(name = "ID")
 	private Long id;
 	
-	@Column(name = "DESC_WEATHER")
+	@Column(name = "DESCRICAO")
 	private String descricao;
 
 	public Long getId() {
