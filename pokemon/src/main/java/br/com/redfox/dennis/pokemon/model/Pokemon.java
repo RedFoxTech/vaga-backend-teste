@@ -1,6 +1,7 @@
 package br.com.redfox.dennis.pokemon.model;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -45,12 +46,12 @@ public class Pokemon {
 	@ManyToMany
 	@JoinTable(name = "POKEMON_TIPE", joinColumns = { @JoinColumn(name = "ID_POKEMON") }, inverseJoinColumns = {
 			@JoinColumn(name = "ID_TIPE") })
-	private List<Tipe> tipe;
+	private Set<Tipe> tipe;
 
 	@ManyToMany
 	@JoinTable(name = "POKEMON_WEATHER", joinColumns = { @JoinColumn(name = "ID_POKEMON") }, inverseJoinColumns = {
 			@JoinColumn(name = "ID_WEATHER") })
-	private List<Weather>weatherOne;
+	private Set<Weather> weather;
 
 	@Column(name = "STAT_TOTAL")
 	private Integer statusTotal;
@@ -176,20 +177,20 @@ public class Pokemon {
 		return statusTotal;
 	}
 	
-	public List<Tipe> getTipe() {
+	public Set<Tipe> getTipe() {
 		return tipe;
 	}
 
-	public void setTipe(List<Tipe> tipe) {
+	public void setTipe(Set<Tipe> tipe) {
 		this.tipe = tipe;
 	}
 
-	public List<Weather> getWeatherOne() {
-		return weatherOne;
+	public Set<Weather> getWeather() {
+		return weather;
 	}
 
-	public void setWeatherOne(List<Weather> weatherOne) {
-		this.weatherOne = weatherOne;
+	public void setWeather(Set<Weather> weather) {
+		this.weather = weather;
 	}
 
 	public void setStatusTotal(Integer statusTotal) {

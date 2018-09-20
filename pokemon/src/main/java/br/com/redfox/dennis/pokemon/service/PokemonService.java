@@ -4,12 +4,16 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import br.com.redfox.dennis.pokemon.filter.Pages;
 import br.com.redfox.dennis.pokemon.filter.PokemonFilter;
 import br.com.redfox.dennis.pokemon.model.Pokemon;
 import br.com.redfox.dennis.pokemon.repository.PokemonRepository;
+
+import java.util.Arrays;
+import java.util.List;
 
 @Service
 public class PokemonService {
@@ -19,31 +23,35 @@ public class PokemonService {
 
 	@Transactional
 	public Page<Pokemon> findByFilter(PokemonFilter filter) {
-		Pages pag = new Pages(filter.getActualPage(), filter.getPageSize());
-		return pokemonRepository.findByFilter(pag, filter.getId(), filter.getName(), filter.getTipe().getId(),
+		PageRequest pages = new PageRequest(filter.getActualPage(), 10, new Sort(Sort.Direction.fromString("ASC"), "id"));
+		return pokemonRepository.findByFilter(pages, filter.getId(), filter.getName(), filter.getTipe().getId(),
 				filter.getWeather().getId(), filter.getFromAtk(), filter.getFromDef(), filter.getFromSta(),
 				filter.getEvolutionState(), filter.getHaveNest());
 	
 	}
 	
-	@Transactional
+
 	public Page<Pokemon> ListById(int page){
-		Pages pag = new Pages(page, 0);
-		return pokemonRepository.findAllOrderById(pag);
+		PageRequest pages = new PageRequest(page, 10, new Sort(Sort.Direction.fromString("ASC"), "id"));
+		return findPaginable(pages);
 		
 	}
 	
-	@Transactional
+
 	public Page<Pokemon> ListByName(int page){
-		Pages pag = new Pages(page, 0);
-		return pokemonRepository.findAllOrderByName(pag);
+		PageRequest pages = new PageRequest(page, 10, new Sort(Sort.Direction.fromString("ASC"), "name"));
+		return findPaginable(pages);
 	}
 	
-	@Transactional
+
 	public Page<Pokemon> ListByStatusTotal(int page){
-		Pages pag = new Pages(page, 0);
-		return pokemonRepository.findAllOrderBystatusTotal(pag);
+		PageRequest pages = new PageRequest(page, 2, new Sort(Sort.Direction.fromString("ASC"), "statusTotal"));
+		return findPaginable(pages);
 	}
-	
+
+	@Transactional
+	public Page<Pokemon> findPaginable(PageRequest pag) {
+		return  pokemonRepository.findAll(pag);
+	}
 
 }
