@@ -92,7 +92,7 @@ public class Pokemon {
 	@Column(name = "NOT_GETTABLE")
 	private Integer notGettable;
 
-	@Column(name = "FUTUREEVOLVE")
+	@Column(name = "FUTURE_EVOLVE")
 	private Integer futureEvolve;
 
 	@Column(name = "CP40")
