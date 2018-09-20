@@ -1,3 +1,12 @@
+#Variaveis de ambiente: 
+${DATA_SOURCE_URL}
+${USERNAME}
+${PASSWORD}
+
+#Banco usado:
+MySql
+
+
 # Teste de Backend
 
 Olá Dev! Tudo bem?
