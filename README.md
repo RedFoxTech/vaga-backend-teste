@@ -1,9 +1,9 @@
-#Variaveis de ambiente: 
+# Variaveis de ambiente: 
 ${DATA_SOURCE_URL}
 ${USERNAME}
 ${PASSWORD}
 
-#Banco usado:
+# Banco usado:
 MySql
 
 
