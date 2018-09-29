@@ -33,7 +33,7 @@ exports.getById = (req, res, next) => {
 
 exports.getByName = (req, res, next) => {
     Pokemons.find({
-        Name: req.params.nome
+        "Name": req.params.nome
     })
     .then(data => {
         res.status(200).send(data);
@@ -47,7 +47,7 @@ exports.getByName = (req, res, next) => {
 
 exports.getByTipo = (req, res, next) => {
     Pokemons.find({
-        "Type 1": req.params.tipo
+        "Type 1": req.params.type
     })
     .then(data => {
         res.status(200).send(data);
@@ -75,10 +75,10 @@ exports.getByGeracao = (req, res, next) => {
     });
 }
 
-exports.buscar = (req, res, next) => {
+exports.searchByName = (req, res, next) => {
     
     Pokemons.find({
-        "Name": {$regex: `.*${req.params.buscar}.*`} 
+        "Name": { $regex: `/.*${req.params.buscarPokemon}.*/` }
     })
     .then(data => {
         res.status(200).send(data);
@@ -91,15 +91,17 @@ exports.buscar = (req, res, next) => {
 }
 
 exports.showPage = (req, res, next) => {
-    let pagina = parseInt(req.params.pagina);
-    let qtdPorPagina = parseInt(req.params.qtd);
-    let pagina_atual = (pagina * qtdPorPagina);
+    
+    var pageOptions = {
+        pagina: parseInt(req.params.pagina) || 0,
+        qtdPorPagina:parseInt(req.params.qtd) || 10
+    }
     
     Pokemons.find({
 
     })
-    .skip(pagina_atual)
-    .limit(10)
+    .skip(pageOptions.pagina > 0 ? ((pageOptions.pagina - 1) * pageOptions.qtdPorPagina) : 0)
+    .limit(pageOptions.qtdPorPagina)
     .then(data => {
         res.status(200).send(data);
     }).catch (ex => {
