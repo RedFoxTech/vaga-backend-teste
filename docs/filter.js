@@ -2,7 +2,7 @@
     * @api {get} /v1/pokemons/filter filter Pokemons
     * @apiGroup Pokemons
     * @apiVersion 1.0.0
-    * @apiParam {_id} _id Pokemons _id
+    * @apiParam {_id} _id Pokemons _id Optional
     * @apiParam {Number} page Pokemons page  Optional
     * @apiParam {Number} limit Pokemons limit  Optional
     * @apiParam {String} weather_1 Pokemons weather_1 Optional
