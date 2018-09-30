@@ -6,6 +6,7 @@
 
 - Dependencies Application: ` npm i `
 - Dependencies Doc: `npm i apidoc live-server -g`
+- create archive `cp .env-example .env`
 
 # Generate Documentation
 ` apidoc -e "(node_modules|public|_tester)" -o doc-html /apidoc `
