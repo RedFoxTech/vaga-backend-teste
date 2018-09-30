@@ -9,6 +9,10 @@
 - Dependencies Doc: `npm i apidoc live-server -g`
 - create archive `cp .env-example .env`
 
+# Import data for base
+
+- Import from CSV for Mongo: `npm run mongo:import`
+
 # Generate Documentation
 ` apidoc -e "(node_modules|public|_tester)" -o doc-html /apidoc `
 
