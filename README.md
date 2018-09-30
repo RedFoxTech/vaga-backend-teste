@@ -5,6 +5,7 @@
 # Install dependencies
 
 - Dependencies Application: ` npm i `
+- Dependencies Nodemon: `npm i nodemon`
 - Dependencies Doc: `npm i apidoc live-server -g`
 - create archive `cp .env-example .env`
 
@@ -27,6 +28,18 @@
 
 ### Start Application
 `npm start`
+
+### Access
+- Api: *http://localhost:3000*
+- Documentation: *http://localhost:8080*
+
+# Docker
+### Tecnologies needed
+- Docker 18.06.1
+- Docker Compose 1.22.0
+
+## Start Application
+`docker-compose up`
 
 ### Access
 - Api: *http://localhost:3000*
