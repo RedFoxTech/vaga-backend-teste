@@ -14,4 +14,5 @@ module.exports = app => {
         .get(isId, listOne)
         .put(isId, validateUpdate, update)
         .delete(isId, remove)
+
 }

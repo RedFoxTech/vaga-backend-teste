@@ -1,5 +1,18 @@
 version: "3"
 services:
+    backend:
+        image: node:8.11.4
+        restart: always
+        container_name: node_pokemon
+        volumes:
+            - .:/backend
+            - /node_modules
+        depends_on:
+            - mongodb
+        ports:
+            - 3000:3000
+        command: bash -c "cd /backend &&  node_modules/.bin/nodemon app.js"
+
     mongodb:
         image: mongo:latest
         restart: always
@@ -12,16 +25,3 @@ services:
         ports:
             - 27017:27017
         command: mongod
-
-    backend:
-        image: node:8.11.4
-        restart: always
-        container_name: node_pokemon
-        volumes:
-            - .:/backend
-            - /node_modules
-        depends_on:
-            - mongodb        
-        ports:
-            - 3000:3000
-        command: bash -c "cd /backend &&  node_modules/.bin/nodemon app.js"

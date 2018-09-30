@@ -1,10 +1,10 @@
 module.exports = {
     isId: {
         title: 'Error',
-        message: 'Error id not invalid!'
+        message: 'Error id inválido!'
     },
     notNumber: {
         title: 'Error',
-        message: 'Error value not number!'
+        message: 'Não foi enviado um número'
     }
 }

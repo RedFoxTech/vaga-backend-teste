@@ -12,7 +12,7 @@ const { Logger } = require('./src/helpers/logger-info')
 
 const { route404, logServer } = require('./src/errors/system')
 
-const  { errorFormatter } = require('./src/errors/validate')
+const { errorFormatter } = require('./src/errors/validate')
 
 require('./src/databases/mongodb')
 

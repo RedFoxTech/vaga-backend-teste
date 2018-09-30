@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:fix": "./node_modules/.bin/eslint ./src/**/*.js --fix",
-    "mongo:import": "mongoimport -d entrevista -c pokemons --type csv --headerline --file israel_import.csv"
+    "mongo:import": "mongoimport -d entrevista -c pokemons --type csv --headerline --file israel_import.csv",
+    "doc": "live-server ./doc-html"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "express-validator": "^5.3.0",
     "helmet": "^3.13.0",
     "hoek": "^5.0.4",
+    "live-server": "^1.2.0",
     "mongoose": "^5.3.0",
     "mongoose-paginate": "^5.0.3",
     "morgan": "^1.9.1",

@@ -1,0 +1,8 @@
+{
+    "name": "Api Teste RedFox",
+    "version": "1.0.0",
+    "description": "Api Teste RedFox",
+    "template": {
+        "forceLanguage": "pt-br"
+    }
+}
