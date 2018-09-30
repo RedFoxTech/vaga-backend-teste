@@ -1,18 +1,8 @@
-version: "3"
+version: "2"
 services:
-    mongodb:
+    mongo:
         image: mongo:latest
-        restart: always
         container_name: "mongodb_entrevista"
-        environment:
-          - MONGO_DATA_DIR=/data/db
-          - MONGO_LOG_DIR=/dev/null
-        volumes:
-          - ./data/db:/data/db
-        ports:
-            - 27017:27017
-        command: mongod --smallfiles --logpath=/dev/null
-
     backend:
         image: node:8.11.4
         restart: always
@@ -23,11 +13,9 @@ services:
         ports:
             - 3000:3000
         depends_on:
-            - mongodb
+            - mongo
         command: bash -c "cd /backend && node_modules/.bin/nodemon"
         environment:
         - PORT=3000
         - MONGODB_URL=mongodb://mongodb_entrevista/entrevista
         - API_VERSION = /v1
-
-
