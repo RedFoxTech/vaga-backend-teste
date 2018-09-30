@@ -1,3 +1,197 @@
+/**
+    * @api {post} /v1/pokemons/ Create Pokemons
+    * @apiGroup Pokemons
+    * @apiVersion 1.0.0
+    * @apiParam {_id} _id Pokemons _id
+    * @apiParam {String} weather_1 Pokemons weather_1
+    * @apiParam {String} weather_2 Pokemons weather_2
+    * @apiParam {Number} evolved Pokemons evolved
+    * @apiParam {Number} stat_total Pokemons stat_total
+    * @apiParam {Number} atk Pokemons atk
+    * @apiParam {Number} def Pokemons def
+    * @apiParam {Number} sta Pokemons sta
+    * @apiParam {Number} legendary Pokemons legendary
+    * @apiParam {Number} aquireable Pokemons aquireable
+    * @apiParam {Number} spawns Pokemons spawns
+    * @apiParam {Number} regional Pokemons regional
+    * @apiParam {Number} raidable Pokemons raidable
+    * @apiParam {Number} hatchable Pokemons hatchable
+    * @apiParam {Number} shiny Pokemons shiny
+    * @apiParam {Number} nest Pokemons nest
+    * @apiParam {Number} new Pokemons new
+    * @apiParam {Number} not_gettable Pokemons not_gettable
+    * @apiParam {String} name Pokemons name
+    * @apiParam {Number} pokedex_number Pokemons pokedex_number
+    * @apiParam {Number} img_name Pokemons img_name
+    * @apiParam {Number} evolution_stage Pokemons evolution_stage
+    * @apiParam {Number} family_id Pokemons family_id
+    * @apiParam {Number} cross_gen Pokemons cross_gen
+    * @apiParam {String} type_1 Pokemons type_1
+    * @apiParam {String} type_2 Pokemons type_2
+    * @apiParam {Number} cp_40 Pokemons cp_40
+    * @apiParam {Number} cp_39 Pokemons cp_39
+    * @apiExample {curl} Example:
+        curl --request POST \
+  --url http://localhost:3000/V1/pokemons \
+  --header 'Content-Type: application/x-www-form-urlencoded' \
+  --data 'evolved=0&stat_total=290&atk=116%0A&def=96&sta=78%0A&legendary=0&aquireable=1&spawns=1&regional=0&raidable=0&hatchable=5&shiny=0&nest=1&new=0&not_gettable=0&future_evolve=0&row=1000&name=Charmander&pokedex_number=4&img_name=4&generation=1&evolution_stage=1&family_id=2&type_1=fire&type_2=12312&weather_1=Sunny%2Fclear&weather_2=&cp_40=831&cp_39=819'
+    * @apiSuccessExample {json} Success
+    *    HTTP/1.1 200 OK
+    {
+        "evolved": 0,
+        "stat_total": 290,
+        "atk": 116,
+        "def": 96,
+        "sta": 78,
+        "legendary": 0,
+        "aquireable": 1,
+        "spawns": 1,
+        "regional": 0,
+        "raidable": 0,
+        "hatchable": 5,
+        "shiny": 0,
+        "nest": 1,
+        "new": 0,
+        "not_gettable": 0,
+        "future_evolve": 0,
+        "_id": "5bb0d0cf5b490a760fd03a69",
+        "row": "1000",
+        "name": "Charmander",
+        "pokedex_number": "4",
+        "img_name": "4",
+        "generation": 1,
+        "evolution_stage": 1,
+        "family_id": 2,
+        "type_1": "fire",
+        "type_2": "12312",
+        "weather_1": "Sunny/clear",
+        "weather_2": "",
+        "cp_40": 831,
+        "cp_39": 819,
+        "__v": 0
+    }
+    * @apiErrorExample {json} Values required
+    *    HTTP/1.1 404 Bad Request
+    [
+        {
+            "location": "params",
+            "param": "row",
+            "msg": "Invalid value"
+        },
+        {
+            "location": "params",
+            "param": "name",
+            "msg": "Invalid value"
+        },
+        {
+            "location": "params",
+            "param": "pokedex_number",
+            "msg": "Invalid value"
+        },
+        {
+            "location": "params",
+            "param": "img_name",
+            "msg": "Invalid value"
+        },
+        {
+            "location": "params",
+            "param": "generation",
+            "msg": "Invalid value"
+        },
+        {
+            "location": "params",
+            "param": "evolution_stage",
+            "msg": "Invalid value"
+        },
+        {
+            "location": "params",
+            "param": "evolved",
+            "msg": "Invalid value"
+        },
+        {
+            "location": "params",
+            "param": "family_id",
+            "msg": "Invalid value"
+        },
+        {
+            "location": "params",
+            "param": "stat_total",
+            "msg": "Invalid value"
+        },
+        {
+            "location": "params",
+            "param": "atk",
+            "msg": "Invalid value"
+        },
+        {
+            "location": "params",
+            "param": "def",
+            "msg": "Invalid value"
+        },
+        {
+            "location": "params",
+            "param": "sta",
+            "msg": "Invalid value"
+        },
+        {
+            "location": "params",
+            "param": "legendary",
+            "msg": "Invalid value"
+        },
+        {
+            "location": "params",
+            "param": "aquireable",
+            "msg": "Invalid value"
+        },
+        {
+            "location": "params",
+            "param": "spawns",
+            "msg": "Invalid value"
+        },
+        {
+            "location": "params",
+            "param": "regional",
+            "msg": "Invalid value"
+        },
+        {
+            "location": "params",
+            "param": "raidable",
+            "msg": "Invalid value"
+        },
+        {
+            "location": "params",
+            "param": "hatchable",
+            "msg": "Invalid value"
+        },
+        {
+            "location": "params",
+            "param": "shiny",
+            "msg": "Invalid value"
+        },
+        {
+            "location": "params",
+            "param": "nest",
+            "msg": "Invalid value"
+        },
+        {
+            "location": "params",
+            "param": "new",
+            "msg": "Invalid value"
+        },
+        {
+            "location": "params",
+            "param": "cp_40",
+            "msg": "Invalid value"
+        },
+        {
+            "location": "params",
+            "param": "cp_39",
+            "msg": "Invalid value"
+        }
+    ]
+    * @apiErrorExample {json} Error Pokemons error
+    *    HTTP/1.1 500 Internal Server Error
+**/
 
 /**
    * @api {get} /api/v1/pokemons Find All Pokemons

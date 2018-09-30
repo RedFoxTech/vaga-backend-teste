@@ -3,9 +3,8 @@ const { requestRequired, requestOptional, isId, isNumberValidatePaginate } = req
 
 module.exports.create = (req, res, next) => {
     const required = [
-        'row', 'name', 'pokedex_number', 'img_name', 'generation', 'evolution_stage', 'evolved', 'family_id', 'type_1', 'type_2', 'type_2', 'weather_1',
-        'weather_2', 'stat_total', 'atk', 'def', 'sta', 'legendary', 'aquireable', 'spawns', 'regional', 'raidable', 'hatchable', 'shiny', 'nest',
-        'new', 'not_gettable', 'future_evolve', 'cp_40', 'cp_39'
+        'row', 'name', 'pokedex_number', 'img_name', 'generation', 'evolution_stage', 'evolved', 'family_id', 'stat_total', 'atk', 'def', 'sta', 'legendary', 'aquireable', 'spawns', 'regional', 'raidable', 'hatchable', 'shiny', 'nest',
+        'new',  'cp_40', 'cp_39'
     ]
     const error = requestRequired(req, required, Errors)
     error ? res.status(400).json(error) : next()

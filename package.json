@@ -4,10 +4,11 @@
   "description": "Teste para vaga back-end com NodeJS",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "nyc --reporter=html -x 'test/**/*.spec.js' mocha --file test/imports.js test/**/*.spec.js --reporter spec --exit",
     "lint:fix": "./node_modules/.bin/eslint ./src/**/*.js --fix",
     "mongo:import": "mongoimport -d entrevista -c pokemons --type csv --headerline --file israel_import.csv",
-    "doc": "live-server ./doc-html"
+    "doc": "live-server ./doc-html",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   "homepage": "https://github.com/israeldantasleite/vaga-backend-teste#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "chai": "^4.2.0",
     "compression": "^1.7.3",
     "cors": "^2.8.4",
     "dotenv": "^6.0.0",
@@ -30,7 +32,7 @@
     "hoek": "^5.0.4",
     "live-server": "^1.2.0",
     "mongoose": "^5.3.0",
-    "mongoose-paginate": "^5.0.3",
+    "mongoose-paginate": "git://github.com/zerok78/mongoose-paginate.git#version-5.0.4",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.4",
     "winston": "^3.1.0"
@@ -42,6 +44,11 @@
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
-    "husky": "^1.0.1"
+    "husky": "^1.0.1",
+    "mocha": "^5.2.0",
+    "nyc": "^13.0.1",
+    "sinon": "^6.3.4",
+    "sinon-chai": "^3.2.0",
+    "supertest": "^3.3.0"
   }
 }
