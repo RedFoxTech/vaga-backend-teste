@@ -1,36 +1,58 @@
-# Teste de Backend
+# API DESENVOLVIDA EM NODEJS
 
-Olá Dev! Tudo bem?
+Autor: Gabriel Paiva
+Banco de dados: MongoDB
+Padrão de Arquitetura: MVC
 
-Nós estamos sempre em busca de profissionais interessantes e interessados, com boa capacidade de aprendizado, adaptação e principalmente bom senso!
+## INSTRUÇÕES
+    Esta API foi testada pelo Insomnia, um REST Client para realizar requisições HTTP.
+    Na pasta API há um arquivo do Insomnia com todas as requisições usadas para este projeto.
 
-Este teste tem como objetivo avaliar e desafiar você. Não é obrigatório realizá-lo completamente, queremos apenas reconhecer seu esforço e potencial para aprender, se adaptar e tomar decisões.
+    A Colletion do mongodb se localiza na pasta API/Pokemon.json/
 
-Vamos ao teste!
+    As seguintes funcionalidades estão disponíveis:
+        * Listagem;
+        * Busca;
+        * CRUD.
 
-## Desafio Pokémon Go!
+    
+#   1) Listagem
+        Todas as listagens são feitas pela rota "/all" via GET.
+        Para navegar entre as páginas, envie a query "page" com o número da página:
+        localhost:3000/all?page=20
+        
+        É possível filtrar e ordenar os resultados enviando propriedades no corpo da requisição,por exemplo:
 
-Sua missão é importar os dados do Pokemon Go, que estão no excel, e criar uma API para que possamos consumir estes dados de maneira prática, rápida e automatizada.
+        {
+            "filters": {
+                "Generation": 7,
+                "Shiny": 0
+            },
+            "sort": {
+                "Name": "asc"
+            }
+        }
 
-Esta API deverá seguir o mínimo de práticas RESTful e conter listagens, busca, paginação e filtros. Fique à vontade para decidir quais filtros são mais interessantes.
 
-## Consigo fazer?
+#   2) Busca
+        Todas as buscas são feitas pela rota "/search" via GET.
+        Exemplo de palavras chave para buscar:
+            * Pikachu: retorna o Pokemon
+            * +pikachu: retorna o pokemon e suas evoluções
+            * 2: pokemons na pokedex 2
+            * atk 100-200: pokemons com ATK no intervalo mencionado
+        
+        É possível também o parametro "sort" no corpo da requisição.
+        Exemplos de busca:
 
-Consegue sim! Só precisa saber (ou aprender agora) um pouco sobre as seguintes tecnologias:
-- Conceitos de API RESTful
-- Modelagem de dados
-- Alguma linguagem backend, por exemplo, Java, PHP, Python, etc...
-- Algum banco de dados, por exemplo, MySQL, SQL Server, MongoDB, etc...
-- Git
+            "localhost:3000/search?q=Charmander"  => Pokemon
+            "localhost:3000/search?q=+charmander" => Evoluções
+            "localhost:3000/search?q=50"          => Pokemons na pokedex 50
+            "localhost:3000/search?q=atk 1-50"    => Pokemons com ATK entre 1 e 50
 
-## Por onde começo?
-
-Primeiramente, você pode fazer um fork desse repositório aqui, para sua conta do Github, depois disso crie uma branch nova com o seu nome (ex: nome_sobrenome), para podermos indentificá-lo.
-
-Após terminar o desafio, você pode solicitar um pull request para a branch master do nosso repositório. Vamos receber e fazer a avaliação de todos.
-
-## Só isso?
-
-Só! Mas se quiser fazer a diferença, tente implementar um pouco de TDD e utilizar docker para execução do projeto.
-
-Boa sorte! :)
+#   3) CRUD
+        Pode-se adicionar, listar, editar e excluir pokemons.
+        
+        POST    "localhost:3000/"     => Adicionar
+        PUT     "localhost:3000/:id"  => Editar
+        DELETE  "localhost:3000/:id"  => Excluir

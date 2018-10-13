@@ -1,0 +1,191 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2018-10-13T14:38:29.550Z",
+	"__export_source": "insomnia.desktop.app:v6.0.2",
+	"resources": [
+		{
+			"_id": "wrk_fc0bf17d2002439198915053e055aaf0",
+			"created": 1539292937680,
+			"description": "",
+			"modified": 1539292937680,
+			"name": "Pokemon",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_ec03d2f348df4219ba86386b8281e9ae",
+			"color": null,
+			"created": 1539292937884,
+			"data": {
+				"base_url": "localhost:3000"
+			},
+			"isPrivate": false,
+			"metaSortKey": 1539292937884,
+			"modified": 1539292986623,
+			"name": "New Environment",
+			"parentId": "wrk_fc0bf17d2002439198915053e055aaf0",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_f4c601a646b947c783933efd9a5c79ee",
+			"cookies": [],
+			"created": 1539292937894,
+			"modified": 1539292937894,
+			"name": "Default Jar",
+			"parentId": "wrk_fc0bf17d2002439198915053e055aaf0",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "req_9e5c67fa1b2c48d5b11d29f9352b7eec",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"filters\" : {\n\t\t\n\t},\n\t\"sort\": {\n\t\t\"Name\": \"asc\"\n\t}\n}"
+			},
+			"created": 1539292951265,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_d81c4bb8cc0d4fd6955bf03ed39cc00d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1539292951266,
+			"method": "GET",
+			"modified": 1539441433037,
+			"name": "Listagem",
+			"parameters": [],
+			"parentId": "wrk_fc0bf17d2002439198915053e055aaf0",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/all?page=1",
+			"_type": "request"
+		},
+		{
+			"_id": "req_de49d82639b94b18a802d99d1e1ac382",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"Name\": \"Novinho\",\n\t\"PokedexNumber\": 25,\n\t\"Imgname\": \"novoimg\",\n\t\"Generation\": 2,\n\t\"EvolutionStage\": 2,\n\t\"Evolved\": 1,\n\t\"FamilyID\": 123,\n\t\"CrossGen\": 0,\n\t\"Type1\": \"grass\",\n\t\"Type2\": \"poison\",\n\t\"Weather1\": \"Sunny/clear\",\n\t\"Weather2\": \"Cloudy\",\n\t\"STATTOTAL\": 555,\n\t\"ATK\": 2000,\n\t\"DEF\": 45,\n\t\"STA\": 115,\n\t\"Legendary\": 0,\n\t\"Aquireable\": 1,\n\t\"Spawns\": 1,\n\t\"Regional\": 0,\n\t\"Raidable\": 0,\n\t\"Hatchable\": 5,\n\t\"Shiny\": 1,\n\t\"Nest\": 1,\n\t\"New\": 1,\n\t\"Not-Gettable\": 0,\n\t\"FutureEvolve\": 0,\n\t\"CP40\": 1717,\n\t\"CP39\": 1232\n}"
+			},
+			"created": 1539344424599,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_26e9b96618294e35977e6677585e03f4",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1539344424599,
+			"method": "POST",
+			"modified": 1539441434460,
+			"name": "Insere Pokemon",
+			"parameters": [],
+			"parentId": "wrk_fc0bf17d2002439198915053e055aaf0",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/",
+			"_type": "request"
+		},
+		{
+			"_id": "req_2bba05abe1d9409c83a16d375c4f0f0b",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1539352678700,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_d9c10d8c55a64521af532b358b15c6ce",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1539352678700,
+			"method": "GET",
+			"modified": 1539441466146,
+			"name": "Busca",
+			"parameters": [],
+			"parentId": "wrk_fc0bf17d2002439198915053e055aaf0",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/search?q=25",
+			"_type": "request"
+		},
+		{
+			"_id": "req_d865345165e54c7eb96a49703e3380e3",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"Name\": \"Novo Pokemon\",\n\t\"PokedexNumber\": 25,\n\t\"Imgname\": \"novoimg\",\n\t\"Generation\": 2,\n\t\"EvolutionStage\": 2,\n\t\"Evolved\": 1,\n\t\"FamilyID\": 123,\n\t\"CrossGen\": 0,\n\t\"Type1\": \"grass\",\n\t\"Type2\": \"poison\",\n\t\"Weather1\": \"Sunny/clear\",\n\t\"Weather2\": \"Cloudy\",\n\t\"STATTOTAL\": 555,\n\t\"ATK\": 2000,\n\t\"DEF\": 45,\n\t\"STA\": 115,\n\t\"Legendary\": 0,\n\t\"Aquireable\": 1,\n\t\"Spawns\": 1,\n\t\"Regional\": 0,\n\t\"Raidable\": 0,\n\t\"Hatchable\": 5,\n\t\"Shiny\": 1,\n\t\"Nest\": 1,\n\t\"New\": 1,\n\t\"Not-Gettable\": 0,\n\t\"FutureEvolve\": 0,\n\t\"CP40\": 1717,\n\t\"CP39\": 1232\n}"
+			},
+			"created": 1539394691422,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_3db112b7cd75432b9575c863f3452a7a",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1539394691422,
+			"method": "PUT",
+			"modified": 1539441449772,
+			"name": "Atualiza Pokemon",
+			"parameters": [],
+			"parentId": "wrk_fc0bf17d2002439198915053e055aaf0",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/5bc202c147acf7114fe79411",
+			"_type": "request"
+		},
+		{
+			"_id": "req_b7ae2ed1a98946e59e9f2482cb215aa7",
+			"authentication": {},
+			"body": {},
+			"created": 1539395801827,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1539395801827,
+			"method": "DELETE",
+			"modified": 1539441429244,
+			"name": "Deleta Pokemon",
+			"parameters": [],
+			"parentId": "wrk_fc0bf17d2002439198915053e055aaf0",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/5bc09066529baa2330089b92",
+			"_type": "request"
+		}
+	]
+}
