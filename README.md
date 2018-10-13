@@ -8,6 +8,8 @@ Padrão de Arquitetura: MVC
     Esta API foi testada pelo Insomnia, um REST Client para realizar requisições HTTP.
     Na pasta API há um arquivo do Insomnia com todas as requisições usadas para este projeto.
 
+    A Colletion do mongodb se localiza na pasta API/Pokemon.json/
+
     As seguintes funcionalidades estão disponíveis:
         * Listagem;
         * Busca;
