@@ -1,0 +1,30 @@
+{
+  "name": "vaga-backend-teste",
+  "version": "1.0.0",
+  "description": "Olá Dev! Tudo bem?",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bbeatriz0/vaga-backend-teste.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bbeatriz0/vaga-backend-teste/issues"
+  },
+  "homepage": "https://github.com/bbeatriz0/vaga-backend-teste#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "knex": "^0.16.5",
+    "node-xlsx": "^0.14.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.11"
+  }
+}
