@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title> Pokedex </title>
+  <link rel="stylesheet" href="bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="style.css" type="text/css" />
+   <script type="text/javascript">
+   //var myVar = setInterval(ChamarPokedex,100);
+   
+   function ChamarPokedex(){
+	    var data = null;
+	  	var xhr = new XMLHttpRequest();
+	  	xhr.onreadystatechange = function () {
+	          if(xhr.readyState === XMLHttpRequest.DONE) {
+	              console.log(xhr.status);
+	              if (xhr.status == 200)	         
+	           var dadostabela = JSON.parse(this.responseText);
+	              var HTML;
+	              HTML = '<table style="width:100%" class="table table-borderless table-dark"><tr><th scope="col">N° Pokedex</th><th scope="col">Nome</th><th scope="col">Tipo</th><th scope="col">Ataque</th> <th scope="col">Defesa</th>  <th scope="col">Stamina</th>  <th scope="col">Geração</th> </tr>';
+	             
+	              if(dadostabela.name == "undefined") {
+	           	   alert("Digite o nome corretamente!")
+	              }else {
+	              for (x = 0; x < dadostabela.length; x++) {
+	                  HTML += '<tr><th scope="row">';
+	                  HTML += dadostabela[x].pokedex_number;
+	            	  HTML += '</th><th scope="row">';
+	                  HTML += dadostabela[x].name;
+	                  HTML += '</th><th id="tipo" scope="row">';
+	                  HTML += dadostabela[x].type_1;
+	                  HTML += '</th><th scope="row">';
+	                  HTML += dadostabela[x].atk;
+	                  HTML += '</th><th scope="row">';
+	                  HTML += dadostabela[x].def;
+	                  HTML += '</th><th scope="row">';
+	                  HTML += dadostabela[x].sta;
+	                  HTML += '</th><th scope="row">';
+	                  HTML += dadostabela[x].generation
+	                  HTML += '</th><th scope="row">';
+
+	                 }
+	              }
+	              HTML += '</table';
+	              document.getElementById("boxpokedex").innerHTML = HTML;            	           
+	              console.log(this.responseText);   
+	              	}
+
+	              else
+	              	{
+	              		//
+	              	}
+	          }	    
+	  	xhr.open("GET", "http://localhost:8888/api/pokemon/");
+	  	xhr.setRequestHeader("Content-Type", "application/json");
+	  	xhr.setRequestHeader("Cache-Control", "no-cache");
+	  	xhr.send(data); 	
+ };
+ 
+ function ChamarPokedexNome() {
+	  	var data = null;
+	  	 var npokemon = document.getElementById("npokemon").value;
+	  	var xhr = new XMLHttpRequest();
+	  	xhr.onreadystatechange = function () {
+	          if(xhr.readyState === XMLHttpRequest.DONE) {
+	              console.log(xhr.status);
+	              if (xhr.status == 200)
+	              	{
+	              	console.log(this.responseText);
+	            	    if (this.responseText)
+	            	    	showPokedex(this.responseText); 	
+	              	}
+	              else
+	              	{
+	              		showPokedex(xhr.status);
+	              	}
+	          }
+	      };
+	      
+      if(npokemon == ""){
+	  	ChamarPokedex();
+      }else{
+    	  xhr.open("GET", "http://localhost:8888/api/pokemon/"+npokemon);
+      }
+	  	xhr.setRequestHeader("Content-Type", "application/json");
+	  	xhr.setRequestHeader("Cache-Control", "no-cache");
+	  	xhr.send(data);
+	  };	
+	  
+	  
+	  function showPokedex(responseText)
+	  { 
+		 var npokemon = document.getElementById("npokemon").value;
+	  	 var dadostabela = JSON.parse(responseText);          
+		if(dadostabela.pokedex_number == null){
+			alert("Impossível localizar este pokémon!");
+		}else{		
+	  	 
+	  	 var HTML;
+	              HTML = '<table style="width:100%" class="table table-borderless table-dark"><tr><th scope="col">N° Pokedex</th><th scope="col">Nome</th><th scope="col">Tipo</th><th scope="col">Ataque</th> <th scope="col">Defesa</th>  <th scope="col">Stamina</th>  <th scope="col">Geração</th> </tr>';
+	                  HTML += '<tr><th scope="row">';
+	                  HTML += dadostabela.pokedex_number;
+	            	  HTML += '</th><th scope="row">';
+	                  HTML += dadostabela.name;
+	                  HTML += '</th><th id="tipo" scope="row">';
+	                  HTML += dadostabela.type_1;
+	                  HTML += '</th><th scope="row">';
+	                  HTML += dadostabela.atk;
+	                  HTML += '</th><th scope="row">';
+	                  HTML += dadostabela.def;
+	                  HTML += '</th><th scope="row">';
+	                  HTML += dadostabela.sta;
+	                  HTML += '</th><th scope="row">';
+	                  HTML += dadostabela.generation
+	                  HTML += '</th><th scope="row">';             
+	              HTML += '</table';				
+
+        document.getElementById("boxpokedex").innerHTML = HTML;            	           
+        console.log(this.responseText);                 	
+	  }
+	}
+	  
+	  
+   function ChamarPokedexTipo(){
+	  var data = null;
+	  	var xhr = new XMLHttpRequest();
+	  	xhr.onreadystatechange = function () {
+	          if(xhr.readyState === XMLHttpRequest.DONE) {
+	              console.log(xhr.status);
+	              if (xhr.status == 200)	    
+	            	  
+	           var dadostabela = JSON.parse(this.responseText);
+	           var pokemontype = document.getElementById("pokemontype").value;   
+	              var HTML;
+	              HTML = '<table style="width:100%" class="table table-borderless table-dark"><tr><th scope="col">N° Pokedex</th><th scope="col">Nome</th><th scope="col">Tipo</th><th scope="col">Ataque</th> <th scope="col">Defesa</th>  <th scope="col">Stamina</th>  <th scope="col">Geração</th> </tr>';
+	              for (x = 0; x < dadostabela.length; x++) {	               
+	            if(dadostabela[x].type_1 == pokemontype){  
+	            	  HTML += '<tr><th scope="row">';
+	                  HTML += dadostabela[x].pokedex_number;
+	            	  HTML += '</th><th scope="row">';
+	                  HTML += dadostabela[x].name;
+	                  HTML += '</th><th id="tipo" scope="row">';
+	                  HTML += dadostabela[x].type_1;
+	                  HTML += '</th><th scope="row">';
+	                  HTML += dadostabela[x].atk;
+	                  HTML += '</th><th scope="row">';
+	                  HTML += dadostabela[x].def;
+	                  HTML += '</th><th scope="row">';
+	                  HTML += dadostabela[x].sta;
+	                  HTML += '</th><th scope="row">';
+	                  HTML += dadostabela[x].generation
+	                  HTML += '</th><th scope="row">';
+	            	}	             	              
+	              } 
+	              HTML += '</table';
+	              document.getElementById("boxpokedex").innerHTML = HTML;            	           
+	              console.log(this.responseText);   
+	              	}
+	              else
+	              	{
+	              		//
+	              	}
+	          }	    
+	  	xhr.open("GET", "http://localhost:8888/api/pokemon/");
+	  	xhr.setRequestHeader("Content-Type", "application/json");
+	  	xhr.setRequestHeader("Cache-Control", "no-cache");
+	  	xhr.send(data); 	
+   }     
+        
+        
+        
+   function ChamarPokedexGeracao(){
+		  var data = null;
+		  	var xhr = new XMLHttpRequest();
+		  	xhr.onreadystatechange = function () {
+		          if(xhr.readyState === XMLHttpRequest.DONE) {
+		              console.log(xhr.status);
+		              if (xhr.status == 200)	    
+		            	  
+		           var dadostabela = JSON.parse(this.responseText);
+		           var pokemongen = document.getElementById("pokemongen").value;   
+		              var HTML;
+		              HTML = '<table style="width:100%" class="table table-borderless table-dark"><tr><th scope="col">N° Pokedex</th><th scope="col">Nome</th><th scope="col">Tipo</th><th scope="col">Ataque</th> <th scope="col">Defesa</th>  <th scope="col">Stamina</th>  <th scope="col">Geração</th> </tr>';
+		              for (x = 0; x < dadostabela.length; x++) {	               
+		            if(dadostabela[x].generation==pokemongen){  
+		            	  HTML += '<tr><th scope="row">';
+		                  HTML += dadostabela[x].pokedex_number;
+		            	  HTML += '</th><th scope="row">';
+		                  HTML += dadostabela[x].name;
+		                  HTML += '</th><th id="tipo" scope="row">';
+		                  HTML += dadostabela[x].type_1;
+		                  HTML += '</th><th scope="row">';
+		                  HTML += dadostabela[x].atk;
+		                  HTML += '</th><th scope="row">';
+		                  HTML += dadostabela[x].def;
+		                  HTML += '</th><th scope="row">';
+		                  HTML += dadostabela[x].sta;
+		                  HTML += '</th><th scope="row">';
+		                  HTML += dadostabela[x].generation
+		                  HTML += '</th><th scope="row">';
+		            	}	             	              
+		              } 
+		              HTML += '</table';
+		              document.getElementById("boxpokedex").innerHTML = HTML;            	           
+		              console.log(this.responseText);   
+		              	}
+		              else
+		              	{
+		              		//
+		              	}
+		          }	    
+		  	xhr.open("GET", "http://localhost:8888/api/pokemon/");
+		  	xhr.setRequestHeader("Content-Type", "application/json");
+		  	xhr.setRequestHeader("Cache-Control", "no-cache");
+		  	xhr.send(data); 	
+	   }     
+	             
+   
+   function Zerarescolhas(){
+	   document.getElementById("pokemongen").value = "Geração";
+	   document.getElementById("pokemontype").value = "Tipo";
+	   document.getElementById("npokemon").value = "";
+   }
+  
+  </script>
+  
+  
+ </head>
+ <body onload="ChamarPokedex();">
+ <br />
+  <div class="content">
+  <p style="margin-left:30px; font-weight:bold;" > 
+   *Sempre inicie a busca com a 1°Letra maiúscula!
+   <br />
+   *Após digitar o nome do pokemon que será procurado, tecle 'ENTER' para concretizar a busca.
+  </p>
+   <div class="row">
+    <div class="titulo">
+     </p>
+    <center>
+     <h3>
+       Pokédex 1.0
+     </h3>
+     </center>
+     
+     <div class="find"> 
+       <input id="npokemon" class="form-control npokemon" type="text" placeholder="Digite o nome do pokémon" onchange="ChamarPokedexNome();">
+     </div>
+     <br />  
+     <select id="pokemontype" onchange="ChamarPokedexTipo();" class="form-control">
+      <option> Tipo </option>
+      <option> grass </option>
+      <option> fire </option>
+      <option> water </option>
+      <option> bug </option>
+      <option> normal </option>
+      <option> poison </option>
+      <option> electric </option>
+      <option> ground </option>
+      <option> fairy </option>
+      <option> fighting </option>
+      <option> psychic </option>
+      <option> rock </option>
+      <option> ghost </option>
+      <option> ice </option>
+      <option> dragon </option>
+      <option> dark </option>
+     </select>
+     <br />
+  
+     <select id="pokemongen" onchange="ChamarPokedexGeracao();" class="form-control">
+      <option> Geração </option>
+      <option> 1 </option>
+      <option> 2 </option>
+      <option> 3 </option>
+      <option> 4 </option>
+      <option> 5 </option>
+     </select>     
+     </div>   
+   </div>   
+     <br />     
+  <center> 
+     <div class="reset"> 
+      <button type="button" class="btn btn-success" onclick="ChamarPokedex(); Zerarescolhas();">Resetar a busca</button>
+     </div>
+   </center> 
+     <br />  
+     <div class="row">
+      <div id="boxpokedex">
+     </div>   
+     <br />   
+    </div>  
+    <p id="tipo" />
+    </div> 
+ </body>
+</html>
