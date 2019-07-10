@@ -1,0 +1,5 @@
+{
+    "env":{
+        "MONGO_DB_SENHA": "nicolas123"
+    }
+}
