@@ -1,0 +1,21 @@
+version: "2"
+services:
+    mongo:
+        image: mongo:latest
+        container_name: "mongodb_entrevista"
+    backend:
+        image: node:8.11.4
+        restart: always
+        container_name: backend_entrevista
+        volumes:
+            - .:/backend
+            - /node_modules
+        ports:
+            - 3000:3000
+        depends_on:
+            - mongo
+        command: bash -c "cd /backend && node_modules/.bin/nodemon"
+        environment:
+        - PORT=3000
+        - MONGODB_URL=mongodb://mongodb_entrevista/entrevista
+        - API_VERSION = /v1

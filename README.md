@@ -1,3 +1,56 @@
+# Processo Seletivo
+
+    Candidate: Israel Dantas Leite
+
+# Install dependencies
+
+- Dependencies Application: ` npm i `
+- Dependencies Nodemon: `npm i nodemon`
+- Dependencies Doc: `npm i apidoc live-server -g`
+- create archive `cp .env-example .env`
+
+# Import data for base
+
+- Import from CSV for Mongo: `npm run mongo:import`
+
+# Generate Documentation
+` apidoc -e "(node_modules|public|_tester)" -o doc-html /apidoc `
+
+# Machine Local
+### Technologies needed
+- Nodejs 8.10.0 or superior
+- MongoDB 3.6 or superior
+
+### Start Documentation
+`npm run doc`
+
+### Tester
+` npm run test`
+
+### Eslint
+` npm run lint:fix `
+
+### Start Application
+`npm start`
+
+### Access
+- Api: *http://localhost:3000*
+- Documentation: *http://localhost:8080*
+
+# Docker
+### Tecnologies needed
+- Docker 18.06.1
+- Docker Compose 1.22.0
+
+## Start Application
+`docker-compose up`
+
+### Access
+- Api: *http://localhost:3000*
+- Documentation: *http://localhost:8080*
+
+
+
 # Teste de Backend
 
 Olá Dev! Tudo bem?
