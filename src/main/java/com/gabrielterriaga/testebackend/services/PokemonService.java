@@ -30,5 +30,7 @@ public class PokemonService {
 		return obj.orElseThrow(() -> new ObjectNotFoundException("Não encontrado"));
 	}
 	
-	
+	public List<Pokemon> searchByName(String text){
+		return repo.searchName(text);
+	}
 }
