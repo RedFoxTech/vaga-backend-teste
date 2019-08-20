@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Pokemon {
 
 	@Id
-	private Integer row;
+	private String row;
 	private String name;
 	private Integer pokedexNumber;
 	private String imgName;
@@ -42,7 +42,7 @@ public class Pokemon {
 		
 	}
 
-	public Pokemon(Integer row, String name, Integer pokedexNumber, String imgName, Integer generation,
+	public Pokemon(String row, String name, Integer pokedexNumber, String imgName, Integer generation,
 			Integer evolutionStage, Integer evolved, Integer familyId, Integer crossGen, String type1, String type2,
 			String weather1, String wather2, Integer statTotal, Integer atk, Integer def, Integer sta,
 			Integer legendary, Integer aquirable, Integer spawns, Integer regional, Integer raidable, Integer hatchable,
@@ -81,11 +81,11 @@ public class Pokemon {
 		this.cp39 = cp39;
 	}
 
-	public Integer getRow() {
+	public String getRow() {
 		return row;
 	}
 
-	public void setRow(Integer row) {
+	public void setRow(String row) {
 		this.row = row;
 	}
 
