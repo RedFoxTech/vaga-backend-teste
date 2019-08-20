@@ -18,10 +18,12 @@ public class PokemonService {
 	@Autowired
 	private PokemonRepository repo;
 	
+	//FINDALL
 	public List<Pokemon> findAll(){
 		return repo.findAll();
 	}
 	
+	//FINDBYROW
 	public Pokemon findByRow(String row) {
 		Optional<Pokemon> obj = repo.findById(row);
 		
