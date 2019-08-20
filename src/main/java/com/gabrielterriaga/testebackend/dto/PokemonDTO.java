@@ -1,15 +1,12 @@
-package com.gabrielterriaga.testebackend.domain;
+package com.gabrielterriaga.testebackend.dto;
 
 import java.io.Serializable;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import com.gabrielterriaga.testebackend.domain.Pokemon;
 
-@Document(collection = "pokemon")
-public class Pokemon implements Serializable {
+public class PokemonDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	@Id
 	private String row;
 	private String name;
 	private Integer pokedexNumber;
@@ -41,47 +38,41 @@ public class Pokemon implements Serializable {
 	private Integer cp40;
 	private Integer cp39;
 	
-	public Pokemon() {
+	public PokemonDTO() {
 		
 	}
-
-	public Pokemon(String row, String name, Integer pokedexNumber, String imgName, Integer generation,
-			Integer evolutionStage, Integer evolved, Integer familyId, Integer crossGen, String type1, String type2,
-			String weather1, String wather2, Integer statTotal, Integer atk, Integer def, Integer sta,
-			Integer legendary, Integer aquirable, Integer spawns, Integer regional, Integer raidable, Integer hatchable,
-			Integer shiny, Integer nest, Integer nnew, Integer notGettable, Integer futureEvolve, Integer cp40,
-			Integer cp39 ) {
-		super();
-		this.row = row;
-		this.name = name;
-		this.pokedexNumber = pokedexNumber;
-		this.imgName = imgName;
-		this.generation = generation;
-		this.evolutionStage = evolutionStage;
-		this.evolved = evolved;
-		this.familyId = familyId;
-		this.crossGen = crossGen;
-		this.type1 = type1;
-		this.type2 = type2;
-		this.weather1 = weather1;
-		this.wather2 = wather2;
-		this.statTotal = statTotal;
-		this.atk = atk;
-		this.def = def;
-		this.sta = sta;
-		this.legendary = legendary;
-		this.aquirable = aquirable;
-		this.spawns = spawns;
-		this.regional = regional;
-		this.raidable = raidable;
-		this.hatchable = hatchable;
-		this.shiny = shiny;
-		this.nest = nest;
-		this.nnew = nnew;
-		this.notGettable = notGettable;
-		this.futureEvolve = futureEvolve;
-		this.cp40 = cp40;
-		this.cp39 = cp39;
+	
+	public PokemonDTO(Pokemon obj) {
+		row = obj.getRow();
+		name = obj.getName();
+		pokedexNumber = obj.getPokedexNumber();
+		imgName = obj.getImgName();
+		generation = obj.getGeneration();
+		evolutionStage = obj.getEvolutionStage();
+		evolved = obj.getEvolved();
+		familyId = obj.getFamilyId();
+		crossGen = obj.getCrossGen();
+		type1 = obj.getType1();
+		type2 = obj.getType2();
+		weather1 = obj.getWeather1();
+		wather2 = obj.getWather2();
+		statTotal = obj.getStatTotal();
+		atk = obj.getAtk();
+		def = obj.getDef();
+		sta = obj.getSta();
+		legendary = obj.getLegendary();
+		aquirable = obj.getAquirable();
+		spawns = obj.getSpawns();
+		regional = obj.getRegional();
+		raidable = obj.getRaidable();
+		hatchable = obj.getHatchable();
+		shiny = obj.getShiny();
+		nest = obj.getNest();
+		nnew = obj.getNnew();
+		notGettable = obj.getNotGettable();
+		futureEvolve = obj.getFutureEvolve();
+		cp40 = obj.getCp40();
+		cp39 = obj.getCp39();
 	}
 
 	public String getRow() {
@@ -322,30 +313,5 @@ public class Pokemon implements Serializable {
 
 	public void setCp39(Integer cp39) {
 		this.cp39 = cp39;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((row == null) ? 0 : row.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Pokemon other = (Pokemon) obj;
-		if (row == null) {
-			if (other.row != null)
-				return false;
-		} else if (!row.equals(other.row))
-			return false;
-		return true;
 	}
 }
