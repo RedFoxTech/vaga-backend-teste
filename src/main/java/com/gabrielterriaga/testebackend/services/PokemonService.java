@@ -18,19 +18,25 @@ public class PokemonService {
 	@Autowired
 	private PokemonRepository repo;
 	
-	//FINDALL
+	//FIND ALL
 	public List<Pokemon> findAll(){
 		return repo.findAll();
 	}
 	
-	//FINDBYROW
+	//FIND BY ROW
 	public Pokemon findByRow(String row) {
 		Optional<Pokemon> obj = repo.findById(row);
 		
 		return obj.orElseThrow(() -> new ObjectNotFoundException("Não encontrado"));
 	}
 	
-	public List<Pokemon> searchByName(String text){
-		return repo.searchName(text);
+	//SEARCH BY NAME
+	public List<Pokemon> searchByName(String name){
+		return repo.searchName(name);
+	}
+	
+	//SEARCH BY TYPE
+	public List<Pokemon> searchByType(String type1, String type2){
+		return repo.searchType(type1, type2);
 	}
 }

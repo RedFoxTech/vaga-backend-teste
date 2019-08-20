@@ -45,11 +45,24 @@ public class PokemonResource {
 	}
 	
 	//ENDPOINT SEARCH BY NAME
-	@RequestMapping(value = "/name", method = RequestMethod.GET)
-	public ResponseEntity<List<Pokemon>> searchByName(@RequestParam(value = "text", defaultValue = "") String text){
+	@RequestMapping(value = "/searchName", method = RequestMethod.GET)
+	public ResponseEntity<List<Pokemon>> searchByName(@RequestParam(value = "name", defaultValue = "") String name){
 		
-		text = URL.decodeParam(text); //decodificar o string da url
-		List<Pokemon> list = service.searchByName(text);
+		name = URL.decodeParam(name); //decodificar o string da url
+		List<Pokemon> list = service.searchByName(name);
+		
+		return ResponseEntity.ok().body(list);
+	}
+	
+	//ENDPOINT SEARCH BY TYPE
+	@RequestMapping(value = "/searchType", method = RequestMethod.GET)
+	public ResponseEntity<List<Pokemon>> searchByType(@RequestParam(value = "type1", defaultValue = "") String type1,
+			@RequestParam(value = "type2", defaultValue = "") String type2){
+		
+		type1 = URL.decodeParam(type1);//decodificar o string da url
+		type2 = URL.decodeParam(type2);
+		
+		List<Pokemon> list = service.searchByType(type1, type2);
 		
 		return ResponseEntity.ok().body(list);
 	}
