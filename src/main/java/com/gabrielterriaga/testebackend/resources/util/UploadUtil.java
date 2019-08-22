@@ -23,7 +23,7 @@ public class UploadUtil {
 	}
 	
 	
-	public Supplier<Stream<Integer>> cellInteratorSupplier(int end){
+	public Supplier<Stream<Integer>> cellIteratorSupplier(int end){
 		return () -> numberStream(end);
 	}
 
