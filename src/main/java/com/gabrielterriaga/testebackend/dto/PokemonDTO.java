@@ -7,37 +7,37 @@ import com.gabrielterriaga.testebackend.domain.Pokemon;
 public class PokemonDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	private Integer id;
-	private String row;
+	private String id;
+	private Integer row;
 	private String name;
-	private String pokedexNumber;
+	private Integer pokedexNumber;
 	private String imgName;
-	private String generation;
+	private Integer generation;
 	private String evolutionStage;
-	private String evolved;
-	private String familyId;
-	private String crossGen;
+	private Integer evolved;
+	private Integer familyId;
+	private Integer crossGen;
 	private String type1;
 	private String type2;
 	private String weather1;
-	private String wather2;
-	private String statTotal;
-	private String atk;
-	private String def;
-	private String sta;
-	private String legendary;
-	private String aquirable;
-	private String spawns;
-	private String regional;
-	private String raidable;
-	private String hatchable;
-	private String shiny;
-	private String nest;
-	private String nnew;
-	private String notGettable;
-	private String futureEvolve;
-	private String cp40;
-	private String cp39;
+	private String weather2;
+	private Integer statTotal;
+	private Integer atk;
+	private Integer def;
+	private Integer sta;
+	private Integer legendary;
+	private Integer aquireable;
+	private Integer spawns;
+	private Integer regional;
+	private Integer raidable;
+	private Integer hatchable;
+	private Integer shiny;
+	private Integer nest;
+	private Integer nnew;
+	private Integer notGettable;
+	private Integer futureEvolve;
+	private Integer cp40;
+	private Integer cp39;
 	
 	public PokemonDTO() {
 		
@@ -57,13 +57,13 @@ public class PokemonDTO implements Serializable {
 		type1 = obj.getType1();
 		type2 = obj.getType2();
 		weather1 = obj.getWeather1();
-		wather2 = obj.getWather2();
+		weather2 = obj.getWeather2();
 		statTotal = obj.getStatTotal();
 		atk = obj.getAtk();
 		def = obj.getDef();
 		sta = obj.getSta();
 		legendary = obj.getLegendary();
-		aquirable = obj.getAquirable();
+		aquireable = obj.getAquireable();
 		spawns = obj.getSpawns();
 		regional = obj.getRegional();
 		raidable = obj.getRaidable();
@@ -77,11 +77,19 @@ public class PokemonDTO implements Serializable {
 		cp39 = obj.getCp39();
 	}
 
-	public String getRow() {
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public Integer getRow() {
 		return row;
 	}
 
-	public void setRow(String row) {
+	public void setRow(Integer row) {
 		this.row = row;
 	}
 
@@ -93,11 +101,11 @@ public class PokemonDTO implements Serializable {
 		this.name = name;
 	}
 
-	public String getPokedexNumber() {
+	public Integer getPokedexNumber() {
 		return pokedexNumber;
 	}
 
-	public void setPokedexNumber(String pokedexNumber) {
+	public void setPokedexNumber(Integer pokedexNumber) {
 		this.pokedexNumber = pokedexNumber;
 	}
 
@@ -109,11 +117,11 @@ public class PokemonDTO implements Serializable {
 		this.imgName = imgName;
 	}
 
-	public String getGeneration() {
+	public Integer getGeneration() {
 		return generation;
 	}
 
-	public void setGeneration(String generation) {
+	public void setGeneration(Integer generation) {
 		this.generation = generation;
 	}
 
@@ -125,27 +133,27 @@ public class PokemonDTO implements Serializable {
 		this.evolutionStage = evolutionStage;
 	}
 
-	public String getEvolved() {
+	public Integer getEvolved() {
 		return evolved;
 	}
 
-	public void setEvolved(String evolved) {
+	public void setEvolved(Integer evolved) {
 		this.evolved = evolved;
 	}
 
-	public String getFamilyId() {
+	public Integer getFamilyId() {
 		return familyId;
 	}
 
-	public void setFamilyId(String familyId) {
+	public void setFamilyId(Integer familyId) {
 		this.familyId = familyId;
 	}
 
-	public String getCrossGen() {
+	public Integer getCrossGen() {
 		return crossGen;
 	}
 
-	public void setCrossGen(String crossGen) {
+	public void setCrossGen(Integer crossGen) {
 		this.crossGen = crossGen;
 	}
 
@@ -174,167 +182,148 @@ public class PokemonDTO implements Serializable {
 	}
 
 	public String getWather2() {
-		return wather2;
+		return weather2;
 	}
 
 	public void setWather2(String wather2) {
-		this.wather2 = wather2;
+		this.weather2 = wather2;
 	}
 
-	public String getStatTotal() {
+	public Integer getStatTotal() {
 		return statTotal;
 	}
 
-	public void setStatTotal(String statTotal) {
+	public void setStatTotal(Integer statTotal) {
 		this.statTotal = statTotal;
 	}
 
-	public String getAtk() {
+	public Integer getAtk() {
 		return atk;
 	}
 
-	public void setAtk(String atk) {
+	public void setAtk(Integer atk) {
 		this.atk = atk;
 	}
 
-	public String getDef() {
+	public Integer getDef() {
 		return def;
 	}
 
-	public void setDef(String def) {
+	public void setDef(Integer def) {
 		this.def = def;
 	}
 
-	public String getSta() {
+	public Integer getSta() {
 		return sta;
 	}
 
-	public void setSta(String sta) {
+	public void setSta(Integer sta) {
 		this.sta = sta;
 	}
 
-	public String getLegendary() {
+	public Integer getLegendary() {
 		return legendary;
 	}
 
-	public void setLegendary(String legendary) {
+	public void setLegendary(Integer legendary) {
 		this.legendary = legendary;
 	}
 
-	public String getAquirable() {
-		return aquirable;
+	public Integer getAquirable() {
+		return aquireable;
 	}
 
-	public void setAquirable(String aquirable) {
-		this.aquirable = aquirable;
+	public void setAquirable(Integer aquirable) {
+		this.aquireable = aquirable;
 	}
 
-	public String getSpawns() {
+	public Integer getSpawns() {
 		return spawns;
 	}
 
-	public void setSpawns(String spawns) {
+	public void setSpawns(Integer spawns) {
 		this.spawns = spawns;
 	}
 
-	public String getRegional() {
+	public Integer getRegional() {
 		return regional;
 	}
 
-	public void setRegional(String regional) {
+	public void setRegional(Integer regional) {
 		this.regional = regional;
 	}
 
-	public String getRaidable() {
+	public Integer getRaidable() {
 		return raidable;
 	}
 
-	public void setRaidable(String raidable) {
+	public void setRaidable(Integer raidable) {
 		this.raidable = raidable;
 	}
 
-	public String getHatchable() {
+	public Integer getHatchable() {
 		return hatchable;
 	}
 
-	public void setHatchable(String hatchable) {
+	public void setHatchable(Integer hatchable) {
 		this.hatchable = hatchable;
 	}
 
-	public String getShiny() {
+	public Integer getShiny() {
 		return shiny;
 	}
 
-	public void setShiny(String shiny) {
+	public void setShiny(Integer shiny) {
 		this.shiny = shiny;
 	}
 
-	public String getNest() {
+	public Integer getNest() {
 		return nest;
 	}
 
-	public void setNest(String nest) {
+	public void setNest(Integer nest) {
 		this.nest = nest;
 	}
 
-	public String getNnew() {
+	public Integer getNnew() {
 		return nnew;
 	}
 
-	public void setNnew(String nnew) {
+	public void setNnew(Integer nnew) {
 		this.nnew = nnew;
 	}
 
-	public String getNotGettable() {
+	public Integer getNotGettable() {
 		return notGettable;
 	}
 
-	public void setNotGettable(String notGettable) {
+	public void setNotGettable(Integer notGettable) {
 		this.notGettable = notGettable;
 	}
 
-	public String getFutureEvolve() {
+	public Integer getFutureEvolve() {
 		return futureEvolve;
 	}
 
-	public void setFutureEvolve(String futureEvolve) {
+	public void setFutureEvolve(Integer futureEvolve) {
 		this.futureEvolve = futureEvolve;
 	}
 
-	public String getCp40() {
+	public Integer getCp40() {
 		return cp40;
 	}
 
-	public void setCp40(String cp40) {
+	public void setCp40(Integer cp40) {
 		this.cp40 = cp40;
 	}
 
-	public String getCp39() {
+	public Integer getCp39() {
 		return cp39;
 	}
 
-	public void setCp39(String cp39) {
+	public void setCp39(Integer cp39) {
 		this.cp39 = cp39;
 	}
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	@Override
-	public String toString() {
-		return "PokemonDTO [id=" + id + ", row=" + row + ", name=" + name + ", pokedexNumber=" + pokedexNumber
-				+ ", imgName=" + imgName + ", generation=" + generation + ", evolutionStage=" + evolutionStage
-				+ ", evolved=" + evolved + ", familyId=" + familyId + ", crossGen=" + crossGen + ", type1=" + type1
-				+ ", type2=" + type2 + ", weather1=" + weather1 + ", wather2=" + wather2 + ", statTotal=" + statTotal
-				+ ", atk=" + atk + ", def=" + def + ", sta=" + sta + ", legendary=" + legendary + ", aquirable="
-				+ aquirable + ", spawns=" + spawns + ", regional=" + regional + ", raidable=" + raidable
-				+ ", hatchable=" + hatchable + ", shiny=" + shiny + ", nest=" + nest + ", nnew=" + nnew
-				+ ", notGettable=" + notGettable + ", futureEvolve=" + futureEvolve + ", cp40=" + cp40 + ", cp39="
-				+ cp39 + "]";
-	}
+	
 }

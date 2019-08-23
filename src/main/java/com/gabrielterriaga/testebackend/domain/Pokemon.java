@@ -5,53 +5,53 @@ import java.io.Serializable;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "pokemon")
+@Document
 public class Pokemon implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	private Integer id;
-	private String row;
+	private String id;
+	private Integer row;
 	private String name;
-	private String pokedexNumber;
+	private Integer pokedexNumber;
 	private String imgName;
-	private String generation;
+	private Integer generation;
 	private String evolutionStage;
-	private String evolved;
-	private String familyId;
-	private String crossGen;
+	private Integer evolved;
+	private Integer familyId;
+	private Integer crossGen;
 	private String type1;
 	private String type2;
 	private String weather1;
-	private String wather2;
-	private String statTotal;
-	private String atk;
-	private String def;
-	private String sta;
-	private String legendary;
-	private String aquirable;
-	private String spawns;
-	private String regional;
-	private String raidable;
-	private String hatchable;
-	private String shiny;
-	private String nest;
-	private String nnew;
-	private String notGettable;
-	private String futureEvolve;
-	private String cp40;
-	private String cp39;
+	private String weather2;
+	private Integer statTotal;
+	private Integer atk;
+	private Integer def;
+	private Integer sta;
+	private Integer legendary;
+	private Integer aquireable;
+	private Integer spawns;
+	private Integer regional;
+	private Integer raidable;
+	private Integer hatchable;
+	private Integer shiny;
+	private Integer nest;
+	private Integer nnew;
+	private Integer notGettable;
+	private Integer futureEvolve;
+	private Integer cp40;
+	private Integer cp39;
 	
 	public Pokemon() {
 		
 	}
 
-	public Pokemon(Integer id, String row, String name, String pokedexNumber, String imgName, String generation,
-			String evolutionStage, String evolved, String familyId, String crossGen, String type1, String type2,
-			String weather1, String wather2, String statTotal, String atk, String def, String sta,
-			String legendary, String aquirable, String spawns, String regional, String raidable, String hatchable,
-			String shiny, String nest, String nnew, String notGettable, String futureEvolve, String cp40,
-			String cp39 ) {
+	public Pokemon(String id, Integer row, String name, Integer pokedexNumber, String imgName, Integer generation,
+			String evolutionStage, Integer evolved, Integer familyId, Integer crossGen, String type1, String type2,
+			String weather1, String weather2, Integer statTotal, Integer atk, Integer def, Integer sta,
+			Integer legendary, Integer aquireable, Integer spawns, Integer regional, Integer raidable,
+			Integer hatchable, Integer shiny, Integer nest, Integer nnew, Integer notGettable, Integer futureEvolve,
+			Integer cp40, Integer cp39) {
 		super();
 		this.id = id;
 		this.row = row;
@@ -66,13 +66,13 @@ public class Pokemon implements Serializable {
 		this.type1 = type1;
 		this.type2 = type2;
 		this.weather1 = weather1;
-		this.wather2 = wather2;
+		this.weather2 = weather2;
 		this.statTotal = statTotal;
 		this.atk = atk;
 		this.def = def;
 		this.sta = sta;
 		this.legendary = legendary;
-		this.aquirable = aquirable;
+		this.aquireable = aquireable;
 		this.spawns = spawns;
 		this.regional = regional;
 		this.raidable = raidable;
@@ -86,20 +86,19 @@ public class Pokemon implements Serializable {
 		this.cp39 = cp39;
 	}
 
-	
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
-	public String getRow() {
+	public Integer getRow() {
 		return row;
 	}
 
-	public void setRow(String row) {
+	public void setRow(Integer row) {
 		this.row = row;
 	}
 
@@ -111,11 +110,11 @@ public class Pokemon implements Serializable {
 		this.name = name;
 	}
 
-	public String getPokedexNumber() {
+	public Integer getPokedexNumber() {
 		return pokedexNumber;
 	}
 
-	public void setPokedexNumber(String pokedexNumber) {
+	public void setPokedexNumber(Integer pokedexNumber) {
 		this.pokedexNumber = pokedexNumber;
 	}
 
@@ -127,11 +126,11 @@ public class Pokemon implements Serializable {
 		this.imgName = imgName;
 	}
 
-	public String getGeneration() {
+	public Integer getGeneration() {
 		return generation;
 	}
 
-	public void setGeneration(String generation) {
+	public void setGeneration(Integer generation) {
 		this.generation = generation;
 	}
 
@@ -143,27 +142,27 @@ public class Pokemon implements Serializable {
 		this.evolutionStage = evolutionStage;
 	}
 
-	public String getEvolved() {
+	public Integer getEvolved() {
 		return evolved;
 	}
 
-	public void setEvolved(String evolved) {
+	public void setEvolved(Integer evolved) {
 		this.evolved = evolved;
 	}
 
-	public String getFamilyId() {
+	public Integer getFamilyId() {
 		return familyId;
 	}
 
-	public void setFamilyId(String familyId) {
+	public void setFamilyId(Integer familyId) {
 		this.familyId = familyId;
 	}
 
-	public String getCrossGen() {
+	public Integer getCrossGen() {
 		return crossGen;
 	}
 
-	public void setCrossGen(String crossGen) {
+	public void setCrossGen(Integer crossGen) {
 		this.crossGen = crossGen;
 	}
 
@@ -191,147 +190,147 @@ public class Pokemon implements Serializable {
 		this.weather1 = weather1;
 	}
 
-	public String getWather2() {
-		return wather2;
+	public String getWeather2() {
+		return weather2;
 	}
 
-	public void setWather2(String wather2) {
-		this.wather2 = wather2;
+	public void setWeather2(String weather2) {
+		this.weather2 = weather2;
 	}
 
-	public String getStatTotal() {
+	public Integer getStatTotal() {
 		return statTotal;
 	}
 
-	public void setStatTotal(String statTotal) {
+	public void setStatTotal(Integer statTotal) {
 		this.statTotal = statTotal;
 	}
 
-	public String getAtk() {
+	public Integer getAtk() {
 		return atk;
 	}
 
-	public void setAtk(String atk) {
+	public void setAtk(Integer atk) {
 		this.atk = atk;
 	}
 
-	public String getDef() {
+	public Integer getDef() {
 		return def;
 	}
 
-	public void setDef(String def) {
+	public void setDef(Integer def) {
 		this.def = def;
 	}
 
-	public String getSta() {
+	public Integer getSta() {
 		return sta;
 	}
 
-	public void setSta(String sta) {
+	public void setSta(Integer sta) {
 		this.sta = sta;
 	}
 
-	public String getLegendary() {
+	public Integer getLegendary() {
 		return legendary;
 	}
 
-	public void setLegendary(String legendary) {
+	public void setLegendary(Integer legendary) {
 		this.legendary = legendary;
 	}
 
-	public String getAquirable() {
-		return aquirable;
+	public Integer getAquireable() {
+		return aquireable;
 	}
 
-	public void setAquirable(String aquirable) {
-		this.aquirable = aquirable;
+	public void setAquireable(Integer aquireable) {
+		this.aquireable = aquireable;
 	}
 
-	public String getSpawns() {
+	public Integer getSpawns() {
 		return spawns;
 	}
 
-	public void setSpawns(String spawns) {
+	public void setSpawns(Integer spawns) {
 		this.spawns = spawns;
 	}
 
-	public String getRegional() {
+	public Integer getRegional() {
 		return regional;
 	}
 
-	public void setRegional(String regional) {
+	public void setRegional(Integer regional) {
 		this.regional = regional;
 	}
 
-	public String getRaidable() {
+	public Integer getRaidable() {
 		return raidable;
 	}
 
-	public void setRaidable(String raidable) {
+	public void setRaidable(Integer raidable) {
 		this.raidable = raidable;
 	}
 
-	public String getHatchable() {
+	public Integer getHatchable() {
 		return hatchable;
 	}
 
-	public void setHatchable(String hatchable) {
+	public void setHatchable(Integer hatchable) {
 		this.hatchable = hatchable;
 	}
 
-	public String getShiny() {
+	public Integer getShiny() {
 		return shiny;
 	}
 
-	public void setShiny(String shiny) {
+	public void setShiny(Integer shiny) {
 		this.shiny = shiny;
 	}
 
-	public String getNest() {
+	public Integer getNest() {
 		return nest;
 	}
 
-	public void setNest(String nest) {
+	public void setNest(Integer nest) {
 		this.nest = nest;
 	}
 
-	public String getNnew() {
+	public Integer getNnew() {
 		return nnew;
 	}
 
-	public void setNnew(String nnew) {
+	public void setNnew(Integer nnew) {
 		this.nnew = nnew;
 	}
 
-	public String getNotGettable() {
+	public Integer getNotGettable() {
 		return notGettable;
 	}
 
-	public void setNotGettable(String notGettable) {
+	public void setNotGettable(Integer notGettable) {
 		this.notGettable = notGettable;
 	}
 
-	public String getFutureEvolve() {
+	public Integer getFutureEvolve() {
 		return futureEvolve;
 	}
 
-	public void setFutureEvolve(String futureEvolve) {
+	public void setFutureEvolve(Integer futureEvolve) {
 		this.futureEvolve = futureEvolve;
 	}
 
-	public String getCp40() {
+	public Integer getCp40() {
 		return cp40;
 	}
 
-	public void setCp40(String cp40) {
+	public void setCp40(Integer cp40) {
 		this.cp40 = cp40;
 	}
 
-	public String getCp39() {
+	public Integer getCp39() {
 		return cp39;
 	}
 
-	public void setCp39(String cp39) {
+	public void setCp39(Integer cp39) {
 		this.cp39 = cp39;
 	}
 
@@ -339,7 +338,37 @@ public class Pokemon implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((aquireable == null) ? 0 : aquireable.hashCode());
+		result = prime * result + ((atk == null) ? 0 : atk.hashCode());
+		result = prime * result + ((cp39 == null) ? 0 : cp39.hashCode());
+		result = prime * result + ((cp40 == null) ? 0 : cp40.hashCode());
+		result = prime * result + ((crossGen == null) ? 0 : crossGen.hashCode());
+		result = prime * result + ((def == null) ? 0 : def.hashCode());
+		result = prime * result + ((evolutionStage == null) ? 0 : evolutionStage.hashCode());
+		result = prime * result + ((evolved == null) ? 0 : evolved.hashCode());
+		result = prime * result + ((familyId == null) ? 0 : familyId.hashCode());
+		result = prime * result + ((futureEvolve == null) ? 0 : futureEvolve.hashCode());
+		result = prime * result + ((generation == null) ? 0 : generation.hashCode());
+		result = prime * result + ((hatchable == null) ? 0 : hatchable.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((imgName == null) ? 0 : imgName.hashCode());
+		result = prime * result + ((legendary == null) ? 0 : legendary.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((nest == null) ? 0 : nest.hashCode());
+		result = prime * result + ((nnew == null) ? 0 : nnew.hashCode());
+		result = prime * result + ((notGettable == null) ? 0 : notGettable.hashCode());
+		result = prime * result + ((pokedexNumber == null) ? 0 : pokedexNumber.hashCode());
+		result = prime * result + ((raidable == null) ? 0 : raidable.hashCode());
+		result = prime * result + ((regional == null) ? 0 : regional.hashCode());
 		result = prime * result + ((row == null) ? 0 : row.hashCode());
+		result = prime * result + ((shiny == null) ? 0 : shiny.hashCode());
+		result = prime * result + ((spawns == null) ? 0 : spawns.hashCode());
+		result = prime * result + ((sta == null) ? 0 : sta.hashCode());
+		result = prime * result + ((statTotal == null) ? 0 : statTotal.hashCode());
+		result = prime * result + ((type1 == null) ? 0 : type1.hashCode());
+		result = prime * result + ((type2 == null) ? 0 : type2.hashCode());
+		result = prime * result + ((weather1 == null) ? 0 : weather1.hashCode());
+		result = prime * result + ((weather2 == null) ? 0 : weather2.hashCode());
 		return result;
 	}
 
@@ -352,24 +381,164 @@ public class Pokemon implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Pokemon other = (Pokemon) obj;
+		if (aquireable == null) {
+			if (other.aquireable != null)
+				return false;
+		} else if (!aquireable.equals(other.aquireable))
+			return false;
+		if (atk == null) {
+			if (other.atk != null)
+				return false;
+		} else if (!atk.equals(other.atk))
+			return false;
+		if (cp39 == null) {
+			if (other.cp39 != null)
+				return false;
+		} else if (!cp39.equals(other.cp39))
+			return false;
+		if (cp40 == null) {
+			if (other.cp40 != null)
+				return false;
+		} else if (!cp40.equals(other.cp40))
+			return false;
+		if (crossGen == null) {
+			if (other.crossGen != null)
+				return false;
+		} else if (!crossGen.equals(other.crossGen))
+			return false;
+		if (def == null) {
+			if (other.def != null)
+				return false;
+		} else if (!def.equals(other.def))
+			return false;
+		if (evolutionStage == null) {
+			if (other.evolutionStage != null)
+				return false;
+		} else if (!evolutionStage.equals(other.evolutionStage))
+			return false;
+		if (evolved == null) {
+			if (other.evolved != null)
+				return false;
+		} else if (!evolved.equals(other.evolved))
+			return false;
+		if (familyId == null) {
+			if (other.familyId != null)
+				return false;
+		} else if (!familyId.equals(other.familyId))
+			return false;
+		if (futureEvolve == null) {
+			if (other.futureEvolve != null)
+				return false;
+		} else if (!futureEvolve.equals(other.futureEvolve))
+			return false;
+		if (generation == null) {
+			if (other.generation != null)
+				return false;
+		} else if (!generation.equals(other.generation))
+			return false;
+		if (hatchable == null) {
+			if (other.hatchable != null)
+				return false;
+		} else if (!hatchable.equals(other.hatchable))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (imgName == null) {
+			if (other.imgName != null)
+				return false;
+		} else if (!imgName.equals(other.imgName))
+			return false;
+		if (legendary == null) {
+			if (other.legendary != null)
+				return false;
+		} else if (!legendary.equals(other.legendary))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (nest == null) {
+			if (other.nest != null)
+				return false;
+		} else if (!nest.equals(other.nest))
+			return false;
+		if (nnew == null) {
+			if (other.nnew != null)
+				return false;
+		} else if (!nnew.equals(other.nnew))
+			return false;
+		if (notGettable == null) {
+			if (other.notGettable != null)
+				return false;
+		} else if (!notGettable.equals(other.notGettable))
+			return false;
+		if (pokedexNumber == null) {
+			if (other.pokedexNumber != null)
+				return false;
+		} else if (!pokedexNumber.equals(other.pokedexNumber))
+			return false;
+		if (raidable == null) {
+			if (other.raidable != null)
+				return false;
+		} else if (!raidable.equals(other.raidable))
+			return false;
+		if (regional == null) {
+			if (other.regional != null)
+				return false;
+		} else if (!regional.equals(other.regional))
+			return false;
 		if (row == null) {
 			if (other.row != null)
 				return false;
 		} else if (!row.equals(other.row))
 			return false;
+		if (shiny == null) {
+			if (other.shiny != null)
+				return false;
+		} else if (!shiny.equals(other.shiny))
+			return false;
+		if (spawns == null) {
+			if (other.spawns != null)
+				return false;
+		} else if (!spawns.equals(other.spawns))
+			return false;
+		if (sta == null) {
+			if (other.sta != null)
+				return false;
+		} else if (!sta.equals(other.sta))
+			return false;
+		if (statTotal == null) {
+			if (other.statTotal != null)
+				return false;
+		} else if (!statTotal.equals(other.statTotal))
+			return false;
+		if (type1 == null) {
+			if (other.type1 != null)
+				return false;
+		} else if (!type1.equals(other.type1))
+			return false;
+		if (type2 == null) {
+			if (other.type2 != null)
+				return false;
+		} else if (!type2.equals(other.type2))
+			return false;
+		if (weather1 == null) {
+			if (other.weather1 != null)
+				return false;
+		} else if (!weather1.equals(other.weather1))
+			return false;
+		if (weather2 == null) {
+			if (other.weather2 != null)
+				return false;
+		} else if (!weather2.equals(other.weather2))
+			return false;
 		return true;
 	}
-
-	@Override
-	public String toString() {
-		return "Pokemon [id=" + id + ", row=" + row + ", name=" + name + ", pokedexNumber=" + pokedexNumber
-				+ ", imgName=" + imgName + ", generation=" + generation + ", evolutionStage=" + evolutionStage
-				+ ", evolved=" + evolved + ", familyId=" + familyId + ", crossGen=" + crossGen + ", type1=" + type1
-				+ ", type2=" + type2 + ", weather1=" + weather1 + ", wather2=" + wather2 + ", statTotal=" + statTotal
-				+ ", atk=" + atk + ", def=" + def + ", sta=" + sta + ", legendary=" + legendary + ", aquirable="
-				+ aquirable + ", spawns=" + spawns + ", regional=" + regional + ", raidable=" + raidable
-				+ ", hatchable=" + hatchable + ", shiny=" + shiny + ", nest=" + nest + ", nnew=" + nnew
-				+ ", notGettable=" + notGettable + ", futureEvolve=" + futureEvolve + ", cp40=" + cp40 + ", cp39="
-				+ cp39 + "]";
-	}	
+	
+	
+	
 }
