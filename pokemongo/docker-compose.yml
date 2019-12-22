@@ -1,0 +1,30 @@
+version: "3.3"
+
+services:  
+  web:
+    container_name: pokemongo
+    restart: unless-stopped
+    build:
+      context: ./
+      dockerfile: .docker/node/Dockerfile
+    command: ["node", "server"]
+    ports:
+      - "3333:3333"
+    networks:
+      - proxy
+    depends_on:
+      - mongo
+
+  mongo:
+    container_name: mongo
+    image: "mongo"
+    ports:
+      - "27017:27017"
+    networks:
+      - proxy
+  
+networks:
+  proxy:
+    driver: bridge
+  
+        
