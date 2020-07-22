@@ -9,6 +9,7 @@
   "author": "williamwjd <william.jose.wjd@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "pg": "^8.3.0",
     "pg-hstore": "^2.3.3",
