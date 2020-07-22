@@ -14,7 +14,8 @@
         "pg": "^8.3.0",
         "pg-hstore": "^2.3.3",
         "sequelize": "^5.21.11",
-        "xlsx": "^0.16.4"
+        "xlsx": "^0.16.4",
+        "yup": "^0.29.1"
     },
     "devDependencies": {
         "nodemon": "^2.0.4",
