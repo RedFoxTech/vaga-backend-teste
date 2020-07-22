@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { xlsConvertToJson } from "./services/excelToJson";
 
-import PokemonController from "./app/controllers/PokemonController";
+import PlanImportController from "./app/controllers/PlanImportController";
 
 const routes = Router();
 
@@ -9,6 +9,6 @@ routes.get("/", (req, res) => {
     return res.json(xlsConvertToJson());
 });
 
-routes.post("/import", PokemonController.importPlanData);
+routes.post("/import", PlanImportController.importPlanData);
 
 export default routes;

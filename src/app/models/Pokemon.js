@@ -4,7 +4,6 @@ class Pokemon extends Model {
     static init(sequelize) {
         super.init(
             {
-                // id: Sequelize.INTEGER,
                 name: Sequelize.STRING,
                 pokedex_number: Sequelize.INTEGER,
                 img_name: Sequelize.STRING,
