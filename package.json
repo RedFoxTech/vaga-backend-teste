@@ -1,25 +1,25 @@
 {
-  "name": "vaga-backend-teste",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "dev": "nodemon src/server.js"
-  },
-  "repository": "https://github.com/WilliamWJD/vaga-backend-teste.git",
-  "author": "williamwjd <william.jose.wjd@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "pg": "^8.3.0",
-    "pg-hstore": "^2.3.3",
-    "sequelize": "^6.3.3",
-    "xlsx": "^0.16.4"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.4",
-    "prettier": "^2.0.5",
-    "sequelize-cli": "^6.2.0",
-    "sucrase": "^3.15.0"
-  }
+    "name": "vaga-backend-teste",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon src/server.js"
+    },
+    "repository": "https://github.com/WilliamWJD/vaga-backend-teste.git",
+    "author": "williamwjd <william.jose.wjd@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "pg": "^8.3.0",
+        "pg-hstore": "^2.3.3",
+        "sequelize": "^5.21.11",
+        "xlsx": "^0.16.4"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.4",
+        "prettier": "^2.0.5",
+        "sequelize-cli": "^6.2.0",
+        "sucrase": "^3.15.0"
+    }
 }

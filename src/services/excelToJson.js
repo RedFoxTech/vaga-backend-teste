@@ -8,5 +8,6 @@ export const xlsConvertToJson = () => {
     );
     const planSelected = plan.Sheets["Sheet1"];
     const data = xlsx.utils.sheet_to_json(planSelected);
+
     return data;
 };

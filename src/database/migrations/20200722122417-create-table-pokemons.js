@@ -3,137 +3,127 @@ module.exports = {
         await queryInterface.createTable("pokemons", {
             id: {
                 type: Sequelize.INTEGER,
-                primaryKey: true,
-                autoIcrement: true,
-                allowNull: false,
+                allowNull: true,
             },
             name: {
                 type: Sequelize.STRING,
-                allowNull: false,
+                allowNull: true,
             },
             pokedex_number: {
                 type: Sequelize.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             img_name: {
-                type: Sequelize.INTEGER,
-                allowNull: false,
+                type: Sequelize.STRING,
+                allowNull: true,
             },
             generation: {
                 type: Sequelize.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             evolution_stage: {
-                type: Sequelize.INTEGER,
-                allowNull: false,
+                type: Sequelize.STRING,
+                allowNull: true,
             },
             evolved: {
                 type: Sequelize.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             familyid: {
                 type: Sequelize.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             crossgen: {
                 type: Sequelize.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             type: {
                 type: Sequelize.STRING,
-                allowNull: false,
+                allowNull: true,
             },
             type2: {
                 type: Sequelize.STRING,
-                allowNull: false,
+                allowNull: true,
             },
             weather1: {
                 type: Sequelize.STRING,
-                allowNull: false,
+                allowNull: true,
             },
             weather2: {
                 type: Sequelize.STRING,
-                allowNull: false,
+                allowNull: true,
             },
             stat_total: {
                 type: Sequelize.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             atk: {
                 type: Sequelize.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             def: {
                 type: Sequelize.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             sta: {
                 type: Sequelize.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             stat_total: {
                 type: Sequelize.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             legendary: {
                 type: Sequelize.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             aquireable: {
                 type: Sequelize.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             spawns: {
                 type: Sequelize.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             regional: {
                 type: Sequelize.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             raidable: {
                 type: Sequelize.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             hatchable: {
                 type: Sequelize.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             shiny: {
                 type: Sequelize.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             nest: {
                 type: Sequelize.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             new: {
                 type: Sequelize.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             not_gettable: {
                 type: Sequelize.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             future_envolve: {
                 type: Sequelize.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             cp_40: {
                 type: Sequelize.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             cp_39: {
                 type: Sequelize.INTEGER,
-                allowNull: false,
-            },
-            created_at: {
-                type: Sequelize.DATE,
-                allowNull: false,
-            },
-            updated_at: {
-                type: Sequelize.DATE,
-                allowNull: false,
+                allowNull: true,
             },
         });
     },
