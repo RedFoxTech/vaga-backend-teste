@@ -1,0 +1,16 @@
+{
+  "name": "vaga-backend-teste",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "repository": "https://github.com/jpsoaresXy/vaga-backend-teste.git",
+  "author": "Joao Pedro <jpsoares3@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "multer": "^1.4.4",
+    "mysql2": "^2.3.3",
+    "read-excel-file": "^5.2.28",
+    "sequelize": "^6.17.0"
+  }
+}
