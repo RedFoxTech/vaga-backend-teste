@@ -1,0 +1,24 @@
+{
+  "name": "vaga-backend-teste",
+  "version": "1.0.0",
+  "description": "Olá Dev! Tudo bem?",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --ignore-watch node_modules src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuccaZVPS/vaga-backend-teste.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuccaZVPS/vaga-backend-teste/issues"
+  },
+  "homepage": "https://github.com/LuccaZVPS/vaga-backend-teste#readme",
+  "devDependencies": {
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.0.4"
+  }
+}
