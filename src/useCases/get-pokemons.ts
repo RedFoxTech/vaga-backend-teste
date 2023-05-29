@@ -4,7 +4,7 @@ import { GetPokemonsRepository } from "./protocols/get-pokemons-repository";
 
 export class GetPokemons implements IGetPokemons {
   constructor(private readonly getPokemons: GetPokemonsRepository) {}
-  async get(): Promise<Pokemon[]> {
-    return await this.getPokemons.get();
+  async get(page: number): Promise<Pokemon[]> {
+    return await this.getPokemons.get(page);
   }
 }

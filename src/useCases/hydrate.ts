@@ -11,7 +11,7 @@ export class Hydrate implements IHydrate {
     private readonly savePokemons: SavePokemonsRepository
   ) {}
   async hydrate(): Promise<void> {
-    let pokemons = await this.getPokemons.get();
+    let pokemons = await this.getPokemons.get(1);
     if (pokemons.length >= 1) {
       return console.log("Database already filled.");
     }
