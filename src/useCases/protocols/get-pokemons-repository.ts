@@ -1,5 +1,5 @@
 import { Pokemon } from "../../domain/pokemon";
 
-export interface GetPokemons {
+export interface GetPokemonsRepository {
   get(): Promise<Pokemon[]>;
 }

@@ -1,12 +1,12 @@
 import { Hydrate } from "../../src/useCases/hydrate";
 import { IXlsxParser } from "../../src/useCases/protocols/xlsx-parser";
-import { GetPokemons } from "../../src/useCases/protocols/get-pokemons";
+import { GetPokemonsRepository } from "../../src/useCases/protocols/get-pokemons-repository";
 import { Pokemon } from "../../src/domain/pokemon";
 import { parsedPokemons } from "./mocks/parsedPokemons";
-import { SavePokemons } from "../../src/useCases/protocols/save-pokemons";
+import { SavePokemonsRepository } from "../../src/useCases/protocols/save-pokemons-repository";
 describe("Hydrate", () => {
   const makeGetPokemons = () => {
-    class GetPokemonsStub implements GetPokemons {
+    class GetPokemonsStub implements GetPokemonsRepository {
       async get(): Promise<Pokemon[]> {
         return [];
       }
@@ -14,7 +14,7 @@ describe("Hydrate", () => {
     return new GetPokemonsStub();
   };
   const makeSavePokemons = () => {
-    class SavePokemonsStub implements SavePokemons {
+    class SavePokemonsStub implements SavePokemonsRepository {
       async save(): Promise<void> {
         return;
       }

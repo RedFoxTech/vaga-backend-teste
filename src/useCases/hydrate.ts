@@ -1,14 +1,14 @@
 import { IXlsxParser } from "./protocols/xlsx-parser";
 import fs from "fs";
-import { GetPokemons } from "./protocols/get-pokemons";
+import { GetPokemonsRepository } from "./protocols/get-pokemons-repository";
 import { IHydrate } from "../domain/useCases/hydrate";
 import { Pokemon } from "../domain/pokemon";
-import { SavePokemons } from "./protocols/save-pokemons";
+import { SavePokemonsRepository } from "./protocols/save-pokemons-repository";
 export class Hydrate implements IHydrate {
   constructor(
     private readonly xlsxParser: IXlsxParser,
-    private readonly getPokemons: GetPokemons,
-    private readonly savePokemons: SavePokemons
+    private readonly getPokemons: GetPokemonsRepository,
+    private readonly savePokemons: SavePokemonsRepository
   ) {}
   async hydrate(): Promise<void> {
     let pokemons = await this.getPokemons.get();
