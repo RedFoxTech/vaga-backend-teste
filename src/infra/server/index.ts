@@ -9,9 +9,10 @@ import { Pokemon } from "../../domain/pokemon";
   const parsedPokemons = parsed[0].data;
   const teste: Pokemon[] = [];
   parsedPokemons.forEach((p) => {
+    p.shift();
     // @ts-ignore
     const pokemon = new Pokemon(...p);
     teste.push({ ...pokemon });
   });
-  console.log(teste[0]);
+  console.log(teste);
 })();

@@ -1,7 +1,7 @@
 export class Pokemon {
   constructor(
-    public id: number,
     public name: string,
+    public id: number,
     public imgId: number,
     public generation: number,
     public evolutionStage: number,

@@ -15,7 +15,7 @@ describe("Hydrate", () => {
   };
   const makeSavePokemons = () => {
     class SavePokemonsStub implements SavePokemons {
-      async save(pokemons: Pokemon[]): Promise<void> {
+      async save(): Promise<void> {
         return;
       }
     }
