@@ -20,6 +20,7 @@ export class Hydrate implements IHydrate {
     const parsedXlsx = await this.xlsxParser.parser(
       fs.readFileSync(`${process.cwd()}/Pokemon Go.xlsx`)
     );
+    parsedXlsx.shift();
     parsedXlsx.forEach((p) => {
       p.shift();
       // @ts-ignore

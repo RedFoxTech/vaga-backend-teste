@@ -2,9 +2,9 @@ export class Pokemon {
   constructor(
     public name: string,
     public id: number,
-    public imgId: number,
+    public imgName: string,
     public generation: number,
-    public evolutionStage: number,
+    public evolutionStage: string,
     public evolved: boolean,
     public familyId: number,
     public crossGen: boolean,

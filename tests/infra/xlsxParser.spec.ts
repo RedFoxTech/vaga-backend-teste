@@ -15,7 +15,15 @@ describe("XlsxParser", () => {
   });
   it("should return the same values as parse function", async () => {
     const sut = makeSut();
-    jest.spyOn(xlsx, "parse").mockImplementationOnce(() => []);
+    jest.spyOn(xlsx, "parse").mockImplementationOnce(
+      () =>
+        [
+          {
+            name: "",
+            data: [],
+          },
+        ] as any
+    );
     const parsedContent = await sut.parser(buffer);
     expect(parsedContent).toEqual([]);
   });

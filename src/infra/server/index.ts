@@ -1,18 +1,16 @@
-import parser from "node-xlsx";
-import fs from "fs";
-import { Pokemon } from "../../domain/pokemon";
+import express from "express";
+import { mongo } from "../mongodb";
+import { config } from "dotenv";
+import { HydrateFactory } from "../../main/factories/useCases/hydrate-factory";
+
 (async () => {
-  const parsed = parser.parse(
-    fs.readFileSync(`${process.cwd()}/Pokemon Go.xlsx`)
+  config();
+  const app = express();
+  await mongo.connect(
+    (process.env.MONGO as string) || "mongodb://db:27017/vaga-backend"
   );
-  parsed[0].data.shift();
-  const parsedPokemons = parsed[0].data;
-  const teste: Pokemon[] = [];
-  parsedPokemons.forEach((p) => {
-    p.shift();
-    // @ts-ignore
-    const pokemon = new Pokemon(...p);
-    teste.push({ ...pokemon });
-  });
-  console.log(teste);
+  await HydrateFactory().hydrate();
+  const port = process.env.PORT || 3000;
+  app.listen(port);
+  console.log("Server running on port " + port);
 })();
