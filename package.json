@@ -4,7 +4,7 @@
   "description": "Olá Dev! Tudo bem?",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn --ignore-watch node_modules src/infra/server/index.ts",
+    "dev": "ts-node-dev --respawn --ignore-watch node_modules src/index.ts",
     "prepare": "husky install",
     "test": "jest --passWithNoTests --runInBand",
     "test:unit": "npm test -- --watch -c jest-unit-config.js",

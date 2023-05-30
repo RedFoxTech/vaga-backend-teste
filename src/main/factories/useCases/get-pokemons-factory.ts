@@ -1,6 +1,6 @@
 import { PokemomRepository } from "../../../infra/mongodb/pokemonRepository";
-import { GetPokemons } from "../../../useCases/list-pokemons";
+import { ListPokemons } from "../../../useCases/list-pokemons";
 
-export const getPokemonsFactory = () => {
-  return new GetPokemons(new PokemomRepository());
+export const listPokemonsFactory = () => {
+  return new ListPokemons(new PokemomRepository());
 };
