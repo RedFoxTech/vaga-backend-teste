@@ -15,13 +15,13 @@ describe("PokemomRepository", () => {
     it("should call find method", async () => {
       const { get } = makeSut();
       const spy = jest.spyOn(pokemonModel, "find");
-      await get();
+      await get(1, {});
       expect(spy).toHaveBeenCalled();
     });
     it("should return the same value as find method", async () => {
       const { get } = makeSut();
       jest.spyOn(pokemonModel, "find");
-      const pokemons = await get();
+      const pokemons = await get(1, {});
       expect(pokemons).toEqual([]);
     });
   });

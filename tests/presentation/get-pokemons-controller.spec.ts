@@ -3,6 +3,7 @@ import { IGetPokemons } from "../../src/domain/useCases/get-pokemons";
 import { GetPokemonsController } from "../../src/presentation/controllers/get-pokemons-controller";
 
 describe("GetPokemonsController", () => {
+  const request = { body: {}, params: {}, query: {} };
   const makeGetPokemons = () => {
     class GetPokemons implements IGetPokemons {
       async get(): Promise<Pokemon[]> {
@@ -21,7 +22,7 @@ describe("GetPokemonsController", () => {
   it("should call get method", async () => {
     const { sut, getPokemons } = makeSut();
     const spy = jest.spyOn(getPokemons, "get");
-    await sut.handle();
+    await sut.handle(request);
     expect(spy).toHaveBeenCalled();
   });
   it("should throw if get method throws", async () => {
@@ -30,7 +31,7 @@ describe("GetPokemonsController", () => {
       throw new Error();
     });
     const toThrow = async () => {
-      await sut.handle();
+      await sut.handle(request);
     };
     expect(toThrow).rejects.toThrow();
   });

@@ -21,7 +21,7 @@ describe("GetPokemons", () => {
   it("should call get method with corret values", async () => {
     const { sut, getPokemons } = makeSut();
     const spy = jest.spyOn(getPokemons, "get");
-    await sut.get();
+    await sut.get(1, {});
     expect(spy).toHaveBeenCalled();
   });
   it("should throws if get method throws", async () => {
@@ -29,6 +29,6 @@ describe("GetPokemons", () => {
     jest.spyOn(getPokemons, "get").mockImplementationOnce(async () => {
       throw new Error();
     });
-    expect(async () => await sut.get()).rejects.toThrow();
+    expect(async () => await sut.get(1, {})).rejects.toThrow();
   });
 });

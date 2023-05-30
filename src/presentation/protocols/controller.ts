@@ -8,4 +8,5 @@ export interface Response {
 export interface Request {
   body: any;
   params: any;
+  query: any;
 }
