@@ -1,6 +1,7 @@
 ## Sobre
 
 Projeto desenvolvido com Node.js, Express, Docker, TDD, DDD e Clean Architecture.
+<br/>
 A lista de pokemons é convertida e salva no mongodb no momento em que a aplicação é iniciada.
 
 ## Instalação
