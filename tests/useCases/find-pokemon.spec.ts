@@ -1,4 +1,4 @@
-import { Pokemon } from "../../src/domain/pokemon";
+import { Data } from "../../src/domain/useCases/list-pokemons";
 import { FindPokemon } from "../../src/useCases/find-pokemon";
 import { GetPokemonsRepository } from "../../src/useCases/protocols/get-pokemons-repository";
 import { pokemons } from "../infra/mocks/pokemons";
@@ -6,8 +6,8 @@ import { pokemons } from "../infra/mocks/pokemons";
 describe("FindPokemon", () => {
   const makeGetPokemonsRepository = () => {
     class GetPokemonsStubRepository implements GetPokemonsRepository {
-      async get(): Promise<Pokemon[]> {
-        return [pokemons[0]];
+      async get(): Promise<Data> {
+        return { totalPages: 10, pokemons: [pokemons[0]] };
       }
     }
     return new GetPokemonsStubRepository();

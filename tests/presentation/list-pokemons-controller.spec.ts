@@ -1,13 +1,13 @@
-import { Pokemon } from "../../src/domain/pokemon";
-import { IListPokemons } from "../../src/domain/useCases/list-pokemons";
+import { Data, IListPokemons } from "../../src/domain/useCases/list-pokemons";
 import { ListPokemonsController } from "../../src/presentation/controllers/list-pokemons-controller";
+import { pokemons } from "../infra/mocks/pokemons";
 
 describe("ListPokemonsController", () => {
   const request = { body: {}, params: {}, query: {} };
   const makeListPokemonsController = () => {
     class ListPokemons implements IListPokemons {
-      async list(): Promise<Pokemon[]> {
-        return [];
+      async list(): Promise<Data> {
+        return { totalPages: 1, pokemons: [pokemons[0]] };
       }
     }
     return new ListPokemons();

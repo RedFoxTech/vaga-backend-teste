@@ -21,7 +21,7 @@ describe("PokemomRepository", () => {
     it("should return the same value as find method", async () => {
       const { get } = makeSut();
       jest.spyOn(pokemonModel, "find");
-      const pokemons = await get(1, {});
+      const { pokemons } = await get(1, {});
       expect(pokemons).toEqual([]);
     });
   });

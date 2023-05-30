@@ -4,11 +4,13 @@ import { GetPokemonsRepository } from "../../src/useCases/protocols/get-pokemons
 import { Pokemon } from "../../src/domain/pokemon";
 import { parsedPokemons } from "./mocks/parsedPokemons";
 import { SavePokemonsRepository } from "../../src/useCases/protocols/save-pokemons-repository";
+import { Data } from "../../src/domain/useCases/list-pokemons";
+import { pokemons } from "../infra/mocks/pokemons";
 describe("Hydrate", () => {
   const makeGetPokemons = () => {
     class GetPokemonsStub implements GetPokemonsRepository {
-      async get(): Promise<Pokemon[]> {
-        return [];
+      async get(): Promise<Data> {
+        return { totalPages: 1, pokemons: [] };
       }
     }
     return new GetPokemonsStub();
@@ -42,10 +44,9 @@ describe("Hydrate", () => {
   };
   it("should not call xlsxParser if getPokemons dont return an empty array", async () => {
     const { sut, xlsxParserStub, getPokemons } = makeSut();
-    jest.spyOn(getPokemons, "get").mockImplementationOnce(async () => [
-      // @ts-ignore
-      { ...new Pokemon(...parsedPokemons[0]) },
-    ]);
+    jest.spyOn(getPokemons, "get").mockImplementationOnce(async () => {
+      return { totalPages: 1, pokemons: [pokemons[0]] };
+    });
     const spy = jest.spyOn(xlsxParserStub, "parser");
     await sut.hydrate();
     expect(spy).toHaveBeenCalledTimes(0);
