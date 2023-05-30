@@ -4,7 +4,14 @@ import { Controller, Request, Response } from "../protocols/controller";
 export class FindPokemonController implements Controller {
   constructor(private readonly findPokemon: IFindPokemon) {}
   async handle(request: Request): Promise<Response> {
-    const pokemon = await this.findPokemon.find(1);
+    const id = request.params.id;
+    if (!id || typeof id !== "number") {
+      return { statusCode: 400, data: "Invalid id provided" };
+    }
+    const pokemon = await this.findPokemon.find(id);
+    if (!pokemon || !pokemon.id) {
+      return { statusCode: 404, data: "Pokemon not found :((" };
+    }
     return { statusCode: 200, data: pokemon };
   }
 }

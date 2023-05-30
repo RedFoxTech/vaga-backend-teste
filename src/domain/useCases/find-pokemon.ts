@@ -1,5 +1,5 @@
 import { Pokemon } from "../pokemon";
 
 export interface IFindPokemon {
-  find(id: number): Promise<Pokemon>;
+  find(id: number): Promise<Pokemon | void>;
 }
