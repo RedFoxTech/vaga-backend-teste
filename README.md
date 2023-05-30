@@ -17,7 +17,7 @@ A aplicação possui as seguintes rotas:
 
 - **Método:** GET
 - **Endpoint:** `/api/pokemons/:page`
-- **Descrição:** Retorna uma lista de pokemons. Limite de 10 por página.
+- **Descrição:** Retorna uma lista de pokemons e quantidade total de páginas. Limite de 10 por página.
 - **Query Params:**
   - `evolved?: number(0 ou 1)` - Filtra os pokémons por nível de evolução (opcional).
   - `type1?: string` - Filtra os pokémons por tipo (opcional).
