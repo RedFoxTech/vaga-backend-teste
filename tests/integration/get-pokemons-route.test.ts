@@ -10,15 +10,15 @@ describe("get-pokemons-route", () => {
     await HydrateFactory().hydrate();
   });
   it("should return 200 on sucess", async () => {
-    const response = await request(app).get("/api/pokemons/1");
+    const response = await request(app).get("/api/pokemons/list/1");
     expect(response.status).toBe(200);
   });
   it("should return a maximum of 10 pokemons", async () => {
-    const response = await request(app).get("/api/pokemons/1");
+    const response = await request(app).get("/api/pokemons/list/1");
     expect(response.body.length).toBe(10);
   });
   it("should return only fire pokemons", async () => {
-    const response = await request(app).get("/api/pokemons/1?type1=fire");
+    const response = await request(app).get("/api/pokemons/list/1?type1=fire");
     let onlyFire = true;
     const body = response.body;
     body.forEach((p: Pokemon) => {
@@ -29,7 +29,7 @@ describe("get-pokemons-route", () => {
     expect(onlyFire).toBeTruthy();
   });
   it("should return only evolved pokemons", async () => {
-    const response = await request(app).get("/api/pokemons/1?evolved=1");
+    const response = await request(app).get("/api/pokemons/list/1?evolved=1");
     let onlyEvolved = true;
     const body = response.body;
     body.forEach((p: Pokemon) => {
@@ -40,7 +40,9 @@ describe("get-pokemons-route", () => {
     expect(onlyEvolved).toBeTruthy();
   });
   it("should return only pokemons of second generation", async () => {
-    const response = await request(app).get("/api/pokemons/1?generation=2");
+    const response = await request(app).get(
+      "/api/pokemons/list/1?generation=2"
+    );
     let onlyGeneration2 = true;
     const body = response.body;
     body.forEach((p: Pokemon) => {
