@@ -11,6 +11,9 @@ export class ListPokemonsController implements Controller {
         filters[f] = req.query[f];
       }
     });
+    if (filters.evolved && filters.evolved != 1 && filters.evolved != 0) {
+      return { statusCode: 400, data: "Evolved param must be 0 or 1" };
+    }
     const { page } = req.params;
     const pokemons = await this.getPokemons.list(page, filters);
     return { statusCode: 200, data: pokemons };
