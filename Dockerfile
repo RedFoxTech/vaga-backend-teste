@@ -4,9 +4,10 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm install && npx tsc
+RUN npm install && npm run build
 
-WORKDIR /app/dist
+
+WORKDIR /app/dist/src
 
 EXPOSE 3000
 

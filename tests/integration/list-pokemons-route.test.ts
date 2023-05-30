@@ -15,13 +15,13 @@ describe("get-pokemons-route", () => {
   });
   it("should return a maximum of 10 pokemons", async () => {
     const response = await request(app).get("/api/pokemons/list/1");
-    expect(response.body.length).toBe(10);
+    expect(response.body.pokemons.length).toBe(10);
   });
   it("should return only fire pokemons", async () => {
     const response = await request(app).get("/api/pokemons/list/1?type1=fire");
     let onlyFire = true;
     const body = response.body;
-    body.forEach((p: Pokemon) => {
+    body.pokemons.forEach((p: Pokemon) => {
       if (p.type1 !== "fire") {
         onlyFire = false;
       }
@@ -32,7 +32,7 @@ describe("get-pokemons-route", () => {
     const response = await request(app).get("/api/pokemons/list/1?evolved=1");
     let onlyEvolved = true;
     const body = response.body;
-    body.forEach((p: Pokemon) => {
+    body.pokemons.forEach((p: Pokemon) => {
       if (!p.evolved) {
         onlyEvolved = false;
       }
@@ -45,7 +45,7 @@ describe("get-pokemons-route", () => {
     );
     let onlyGeneration2 = true;
     const body = response.body;
-    body.forEach((p: Pokemon) => {
+    body.pokemons.forEach((p: Pokemon) => {
       if (p.generation !== 2) {
         onlyGeneration2 = false;
       }

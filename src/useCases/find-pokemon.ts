@@ -5,7 +5,7 @@ import { GetPokemonsRepository } from "./protocols/get-pokemons-repository";
 export class FindPokemon implements IFindPokemon {
   constructor(private readonly pokemonRepository: GetPokemonsRepository) {}
   async find(id: number): Promise<void | Pokemon> {
-    const pokemon = await this.pokemonRepository.get(1, { id: id });
-    return pokemon[0];
+    const { pokemons } = await this.pokemonRepository.get(1, { id: id });
+    return pokemons[0];
   }
 }

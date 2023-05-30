@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --ignore-watch node_modules src/index.ts",
+    "build": "npx tsc && mv PokemonGo.xlsx dist/src && node dist/src/index.js",
     "prepare": "husky install",
     "test": "jest --passWithNoTests --runInBand",
     "test:unit": "npm test -- --watch -c jest-unit-config.js",

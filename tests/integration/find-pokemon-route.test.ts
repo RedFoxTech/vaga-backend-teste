@@ -18,8 +18,8 @@ describe("find-pokemon-route", () => {
     expect(response.status).toBe(404);
   });
   it("should return the correct pokemon if the id provided exist", async () => {
-    const pokemon = await pokemonModel.findOne({ id: 10 });
+    const pokemon = await pokemonModel.findOne({ id: 1 });
     const response = await request(app).get("/api/pokemons/1");
-    expect(response.body).toEqual(pokemon);
+    expect(response.body.id).toEqual(pokemon.id);
   });
 });

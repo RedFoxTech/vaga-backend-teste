@@ -11,7 +11,6 @@ export class ListPokemonsController implements Controller {
         filters[f] = req.query[f];
       }
     });
-    console.log(filters);
     const { page } = req.params;
     const pokemons = await this.getPokemons.list(page, filters);
     return { statusCode: 200, data: pokemons };

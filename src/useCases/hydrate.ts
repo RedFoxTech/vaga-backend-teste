@@ -11,14 +11,14 @@ export class Hydrate implements IHydrate {
     private readonly savePokemons: SavePokemonsRepository
   ) {}
   async hydrate(): Promise<void> {
-    let pokemons = await this.getPokemons.get(1, {});
+    let { pokemons } = await this.getPokemons.get(1, {});
     if (pokemons.length >= 1) {
       return console.log("Database already filled.");
     }
     console.log("Saving pokemons in the database...");
     pokemons = [];
     const parsedXlsx = await this.xlsxParser.parser(
-      fs.readFileSync(`${process.cwd()}/Pokemon Go.xlsx`)
+      fs.readFileSync(`${process.cwd()}/PokemonGo.xlsx`)
     );
     parsedXlsx.shift();
     parsedXlsx.forEach((p) => {
