@@ -1,33 +1,33 @@
 import { Pokemon } from "../../src/domain/pokemon";
-import { IGetPokemons } from "../../src/domain/useCases/get-pokemons";
-import { GetPokemonsController } from "../../src/presentation/controllers/get-pokemons-controller";
+import { IListPokemons } from "../../src/domain/useCases/list-pokemons";
+import { ListPokemonsController } from "../../src/presentation/controllers/list-pokemons-controller";
 
-describe("GetPokemonsController", () => {
+describe("ListPokemonsController", () => {
   const request = { body: {}, params: {}, query: {} };
-  const makeGetPokemons = () => {
-    class GetPokemons implements IGetPokemons {
-      async get(): Promise<Pokemon[]> {
+  const makeListPokemonsController = () => {
+    class ListPokemons implements IListPokemons {
+      async list(): Promise<Pokemon[]> {
         return [];
       }
     }
-    return new GetPokemons();
+    return new ListPokemons();
   };
   const makeSut = () => {
-    const getPokemons = makeGetPokemons();
+    const getPokemons = makeListPokemonsController();
     return {
       getPokemons,
-      sut: new GetPokemonsController(getPokemons),
+      sut: new ListPokemonsController(getPokemons),
     };
   };
   it("should call get method", async () => {
     const { sut, getPokemons } = makeSut();
-    const spy = jest.spyOn(getPokemons, "get");
+    const spy = jest.spyOn(getPokemons, "list");
     await sut.handle(request);
     expect(spy).toHaveBeenCalled();
   });
   it("should throw if get method throws", async () => {
     const { sut, getPokemons } = makeSut();
-    jest.spyOn(getPokemons, "get").mockImplementationOnce(() => {
+    jest.spyOn(getPokemons, "list").mockImplementationOnce(() => {
       throw new Error();
     });
     const toThrow = async () => {

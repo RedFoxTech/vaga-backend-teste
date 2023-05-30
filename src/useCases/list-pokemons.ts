@@ -1,11 +1,11 @@
 import { Pokemon } from "../domain/pokemon";
-import { IGetPokemons } from "../domain/useCases/get-pokemons";
+import { IListPokemons } from "../domain/useCases/list-pokemons";
 import { Filters } from "../presentation/protocols/filters";
 import { GetPokemonsRepository } from "./protocols/get-pokemons-repository";
 
-export class GetPokemons implements IGetPokemons {
+export class ListPokemons implements IListPokemons {
   constructor(private readonly getPokemons: GetPokemonsRepository) {}
-  async get(page: number, filters: Filters): Promise<Pokemon[]> {
+  async list(page: number, filters: Filters): Promise<Pokemon[]> {
     return await this.getPokemons.get(page, filters);
   }
 }

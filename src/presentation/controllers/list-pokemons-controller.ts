@@ -1,9 +1,8 @@
-import { IGetPokemons } from "../../domain/useCases/get-pokemons";
+import { IListPokemons } from "../../domain/useCases/list-pokemons";
 import { Controller, Request } from "../protocols/controller";
-import { Filters } from "../protocols/filters";
 
-export class GetPokemonsController implements Controller {
-  constructor(private readonly getPokemons: IGetPokemons) {}
+export class ListPokemonsController implements Controller {
+  constructor(private readonly getPokemons: IListPokemons) {}
   async handle(req: Request) {
     const filtersNames = ["type1", "evolved", "generation"];
     const filters: any = {};
@@ -14,7 +13,7 @@ export class GetPokemonsController implements Controller {
     });
     console.log(filters);
     const { page } = req.params;
-    const pokemons = await this.getPokemons.get(page, filters);
+    const pokemons = await this.getPokemons.list(page, filters);
     return { statusCode: 200, data: pokemons };
   }
 }
