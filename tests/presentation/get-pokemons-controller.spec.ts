@@ -35,4 +35,9 @@ describe("GetPokemonsController", () => {
     };
     expect(toThrow).rejects.toThrow();
   });
+  it("should should return 200 on sucess", async () => {
+    const { sut } = makeSut();
+    const response = await sut.handle(request);
+    expect(response.statusCode).toBe(200);
+  });
 });

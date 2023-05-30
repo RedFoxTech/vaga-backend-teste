@@ -4,4 +4,7 @@ export const mongo = {
     await mongoose.connect(connectionString);
     console.log("Connected to mongo!");
   },
+  async disconnect() {
+    await mongoose.disconnect();
+  },
 };
