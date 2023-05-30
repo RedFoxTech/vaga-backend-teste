@@ -31,22 +31,6 @@ A aplicação possui as seguintes rotas:
 - **Parâmetros:** `id` - O ID do pokémon a ser buscado.
 - **Descrição:** Retorna um pokémon específico com base no ID fornecido.
 
-## Uso
-
-Envie requisições para a API RESTful na porta definida.
-
-## Testes
-
-Execute `npm test` para executar os testes automatizados.
-
-## Contribuição
-
-Contribuições são bem-vindas! Abra uma issue ou envie um pull request.
-
-## Licença
-
-Este projeto está licenciado sob a [MIT License](LICENSE).
-
 # Teste de Backend
 
 Olá Dev! Tudo bem?
