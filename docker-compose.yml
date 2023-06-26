@@ -1,0 +1,13 @@
+version: "3"
+services:
+  nodejs:
+    image: node-vaga-backend
+    build: .
+    ports:
+      - 3000
+    depends_on:
+      - db
+  db:
+    image: mongo
+    ports:
+      - ":27017"
