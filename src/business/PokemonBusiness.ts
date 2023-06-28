@@ -7,7 +7,6 @@ export class PokemonBusiness {
 
   public getPokemons = async (name:string, start:number, limit:number, type:string ):Promise<PokemonSQL[]> => {
     try{
-  
       let pokemon:PokemonSQL[] = []
       const allPokemons = await this.pokeDatabase.getAllPokemons();
       const findPokemonWhitName = allPokemons.find( poke => poke.Name.toLowerCase() === name.toLowerCase())
@@ -16,14 +15,12 @@ export class PokemonBusiness {
       if(name !== ":name" && !name.includes(":") && findPokemonWhitName) {
         //filtragem por nome
         pokemon.push(findPokemonWhitName)
-      };
-      if(!findPokemonWhitName && findPokemonWhitType ){
+      }else if(!findPokemonWhitName && findPokemonWhitType ){
         allPokemons.map( poke => { //filtragem pelo tipo
           poke.Type_1 === type.toLocaleLowerCase() || poke.Type_2 === type.toLocaleLowerCase()?
             pokemon.push(poke) : {}
         })
-      };
-      if(!findPokemonWhitName && start || limit){//Paginação... 
+      }else if(!findPokemonWhitName && start || limit){//Paginação... 
         //OBS:nao sei se isso se enquandra como paginação mas foi assim que fiz
         if(isNaN(limit) || isNaN(start)){
           throw new CustomError(400, "incorrect 'start' or 'limit' parameter")
