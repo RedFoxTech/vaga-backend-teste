@@ -1,3 +1,36 @@
+## API DE POKEMON
+- Uma simples api que retorna os pokemons
+
+- busca por nome
+- busca por tipo
+- busca por quantidade ex: pokemons apartir do 20 até o 100
+
+## 📚 Deploy no Render
+
+- link do render: https://pokeapi-uotk.onrender.com
+- link completo : https://pokeapi-uotk.onrender.com/pokemon/:name/:type/:start/:limit
+
+### Como usar 
+- busca por nome ex: https://pokeapi-uotk.onrender.com/pokemon/Charmander/:type/:start/:limit
+- busca por tipo ex: https://pokeapi-uotk.onrender.com/pokemon/:name/fire/:start/:limit
+- busca por quantidade/paginação ex: https://pokeapi-uotk.onrender.com/pokemon/:name/:type/30/50
+
+
+
+#### Porque escolhi este Case?
+- fiquei uns 3 meses sem me envolver com programação e escolhi este case porque foi oque me pareceu mais facil, ainda vou fazer outro mais completo e mais complexo
+- a ideia de pegar essse era pra me reacostumar com a programação
+- OBS: essa anotaçao aqui é para especificar a escolha do Case para os Professores
+
+
+
+
+
+
+--- --------- ------- -------- ---- -------------- -------------------- --------------------
+--- --------- ------- -------- ---- -------------- -------------------- --------------------
+
+
 # Teste de Backend
 
 Olá Dev! Tudo bem?
