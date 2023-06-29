@@ -1,0 +1,2 @@
+
+http://localhost:3003/pokemon/:/:type/30/45
