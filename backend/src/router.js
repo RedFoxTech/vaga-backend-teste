@@ -1,7 +1,8 @@
 const express = require('express');
+const pokemonsController = require('./controllers/pokemonsController');
 
 const router = express.Router();
 
-router.get('/', (req, res) => res.status(200).send('O router esta funcioando!'));
+router.get('/pokemons', pokemonsController.getAll);
 
 module.exports = router;
